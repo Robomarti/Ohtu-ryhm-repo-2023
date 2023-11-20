@@ -1,12 +1,31 @@
 from app import app
-from flask import render_template
-from os import getenv
+from flask import render_template, request, redirect
 import sources
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    result = sources.get_all()
+    return render_template("index.html", result=result)
+    
+@app.route("/add", methods=["GET", "POST"])
+def add():
+    if request.method == "GET":
+        return render_template("add_reference.html")
+    
+    if request.method == "POST":
+        sources.add(
+            request.form["author"], 
+            request.form["organization"], 
+            request.form["title"], 
+            request.form["year"], 
+            request.form["source_type"], 
+            request.form["pages"], 
+            request.form["doi"], 
+            request.form["owner_id"]
+            )
+    return redirect("/")
+
 
 #This is only for testing the database functions before ui
 @app.route("/db_write_test")
