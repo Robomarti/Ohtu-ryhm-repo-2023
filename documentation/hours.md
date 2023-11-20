@@ -11,13 +11,14 @@
 | Sanni | 19.11.  | 0,5 | add_reference.html luotu, jonka avulla käyttäjät voivat lisätä viitteen syöttämällä siihen liityviä tietoja |
 | Kaikki | 20.11.  | 0,5 | Integroitiin tiimin jäsenten tekemät osat toimimaan yhdessä |
 | Arttu | 20.11.  | 3 | Flaskiin tutustuminen, routejen luonti |
+| Roberto | 20.11.  | 3,5 | Toin sovelluksen verkkoon Render:in avulla, ja yhdistin tietokannan verkkoon ElephantSql:n avulla.  |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
 | Arttu | 6 |  |  |  |
-| Martinez |  |  |  |  |
+| Roberto  | 6 |  |  |  |
 | Saija | 6 |  |  |  |
 | Sanni |  |  |  |  |
 | Santtu |  |  |  |  |
-| yht. | 6 |  |  |  |
+| yht. | 18 |  |  |  |
