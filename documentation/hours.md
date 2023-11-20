@@ -7,7 +7,7 @@
 | Saija | 15.11. | 1 | Projektin pystytys ja tietokantataulun luonti |
 | Saija |  | 1,5 | Lisättiin luokat db.py ja sources.py, joilla voidaan tallentaa lähteitä tietokantaan, ja hakea tallennetut lähteet |
 | Saija | 16.11. | 0,5 | Testausta, pieni korjaus ja työaikakirjanpidon päivitys |
-| Sanni | 16.11.  | 2 | Tutustuminen html:ään ja lomakkeiden tekoon |
+| Sanni | 16.11.  | 2 | Tutustuminen projektiin, html:ään ja lomakkeiden tekoon |
 | Sanni | 19.11.  | 0,5 | add_reference.html luotu, jonka avulla käyttäjät voivat lisätä viitteen syöttämällä siihen liityviä tietoja |
 | Kaikki | 20.11.  | 0,5 | Integroitiin tiimin jäsenten tekemät osat toimimaan yhdessä |
 | Arttu | 20.11.  | 3 | Flaskiin tutustuminen, routejen luonti |
