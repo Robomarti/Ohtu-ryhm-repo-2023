@@ -9,10 +9,12 @@
 | Saija | 16.11. | 0,5 | Testausta, pieni korjaus ja työaikakirjanpidon päivitys |
 | Sanni | 16.11.  | 2 | Tutustuminen projektiin, html:ään ja lomakkeiden tekoon |
 | Sanni | 19.11.  | 0,5 | add_reference.html luotu, jonka avulla käyttäjät voivat lisätä viitteen syöttämällä siihen liityviä tietoja |
+| Santtu | 19.11.  | 0,5 | login.html ja sign_in.html luotu |
 | Kaikki | 20.11.  | 0,5 | Integroitiin tiimin jäsenten tekemät osat toimimaan yhdessä |
 | Arttu | 20.11.  | 3 | Flaskiin tutustuminen, routejen luonti |
 | Roberto | 20.11.  | 3,5 | Toin sovelluksen verkkoon Render:in avulla, ja yhdistin tietokannan verkkoon ElephantSql:n avulla.  |
 | Sanni | 20.11. | 0,5 | index.html luotu, jonka avulla käyttäjä näkee kaikki lisätyt lähteet |
+| Santtu | 20.11.  | 3 | Robotframework testi referencin lisäykselle |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
@@ -21,5 +23,5 @@
 | Roberto  | 6 |  |  |  |
 | Saija | 6 |  |  |  |
 | Sanni | 6 |  |  |  |
-| Santtu |  |  |  |  |
-| yht. | 18 |  |  |  |
+| Santtu | 6 |  |  |  |
+| yht. | 30 |  |  |  |
