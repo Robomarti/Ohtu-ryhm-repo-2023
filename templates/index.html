@@ -1,3 +1,25 @@
 <!DOCTYPE html>
 <html>
+<body>
+    <h1>References</h1>
+    <a href="/add_reference">Add new reference</a>
+    <hr>
+    {% for reference in references %}
+        Title: 
+        {{ reference.title }}<br>
+        Author:
+        {{ reference.author }}<br>
+        Organization:
+        {{ reference.organization }}<br>
+        Year:
+        {{ reference.year }}<br>
+        Source type: 
+        {{ reference.source_type }}<br>
+        Pages:
+        {{ reference.pages }}<br>
+        DOI: 
+        {{ reference.doi }}<br>
+    {% endfor %}
+    <hr>
+</body>
 </html>
