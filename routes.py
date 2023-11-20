@@ -6,14 +6,15 @@ import sources
 @app.route("/")
 def index():
     result = sources.get_all()
-    return render_template("index.html", result=result)
+    return render_template("index.html", references=result)
     
-@app.route("/add", methods=["GET", "POST"])
-def add():
+@app.route("/add_reference", methods=["GET", "POST"])
+def add_reference():
     if request.method == "GET":
         return render_template("add_reference.html")
     
     if request.method == "POST":
+        print("add_reference: POST!")
         sources.add(
             request.form["author"], 
             request.form["organization"], 
@@ -21,10 +22,9 @@ def add():
             request.form["year"], 
             request.form["source_type"], 
             request.form["pages"], 
-            request.form["doi"], 
-            request.form["owner_id"]
+            request.form["doi"]
             )
-    return redirect("/")
+        return redirect("/")
 
 
 #This is only for testing the database functions before ui

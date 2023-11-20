@@ -1,8 +1,9 @@
 from db import db
 from sqlalchemy.sql import text
 
-def add(author="", organization="", title="", year="2000", source_type="", pages="", doi="", owner_id=""):
+def add(author="", organization="", title="", year="2000", source_type="", pages="", doi=""):
     owner_id = 1 #users.user_id() or session["user_id"]
+    print("sources / add! author = ", author)
     sql = text("""INSERT INTO sources (
                         author, 
                         organization, 
