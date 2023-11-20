@@ -10,11 +10,12 @@
 | Sanni | 16.11.  | 1,5 | Tutustuminen html:ään ja lomakkeiden tekoon |
 | Sanni | 19.11.  | 0,5 | add_reference.html luotu, jonka avulla käyttäjät voivat lisätä viitteen syöttämällä siihen liityviä tietoja |
 | Kaikki | 20.11.  | 0,5 | Integroitiin tiimin jäsenten tekemät osat toimimaan yhdessä |
+| Arttu | 20.11.  | 3 | Flaskiin tutustuminen, routejen luonti |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
-| Arttu |  |  |  |  |
+| Arttu | 6 |  |  |  |
 | Martinez |  |  |  |  |
 | Saija | 6 |  |  |  |
 | Sanni |  |  |  |  |
