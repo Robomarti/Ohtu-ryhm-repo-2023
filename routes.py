@@ -2,14 +2,10 @@ from app import app
 from flask import render_template, request, redirect, session
 import sources
 
-
 @app.route("/")
 def index():
-    if session.get["user_id"]:
-        result = sources.get_all_articles()
-        return render_template("index.html", references=result)
-    else:
-        redirect('/login')
+    result = sources.get_all_articles()
+    return render_template("index.html", references=result)
     
 @app.route("/add_reference", methods=["GET", "POST"])
 def add_reference():
