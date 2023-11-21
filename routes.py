@@ -2,7 +2,6 @@ from app import app
 from flask import render_template, request, redirect, session
 import sources
 
-
 @app.route("/")
 def index():
     if session.get["user_id"]:
