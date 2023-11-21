@@ -52,7 +52,7 @@ def register():
         if session.get("user_id"):
             return redirect("/")
         else:
-            return render_template("register.html")
+            return render_template("sign_in.html")
 
     if request.method == "POST":
         username = request.form["username"]
