@@ -31,7 +31,7 @@ CREATE TABLE inproceedings (
     user_id INT,
     inproceedings_author TEXT, 
     inproceedings_title TEXT,
-    inproceedings_title TEXT,
+    inproceedings_booktitle TEXT,
     inproceedings_series TEXT,
     inproceedings_year INT, 
     inproceedings_pages TEXT,

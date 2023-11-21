@@ -43,22 +43,22 @@ def add(author="", organization="", title="", year="2000", source_type="", pages
     
     return True
 
-def get_all():
-    owner_id = 1 #users.user_id() or session["user_id"]
+def get_all_articles():
+    user_id = 1 #users.user_id() or session["user_id"]
 
     sql = text("""SELECT 
-                    author, 
-                    organization, 
-                    title, 
-                    year, 
-                    source_type, 
-                    pages,
-                    doi
-               FROM sources
-               WHERE owner_id=:owner_id
+                    article_author, 
+                    article_title, 
+                    article_journal, 
+                    article_year, 
+                    article_volume, 
+                    article_number,
+                    article_pages
+               FROM articles
+               WHERE user_id=:user_id
                """) 
 
-    result = db.session.execute(sql, {"owner_id": owner_id})
+    result = db.session.execute(sql, {"user_id": user_id})
     print("sources.py / get_all: result = ", result)
 
     sources_by_user = result.fetchall()
