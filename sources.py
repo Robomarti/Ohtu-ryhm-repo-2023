@@ -131,7 +131,9 @@ def add_inproceedings(inproceedings_author: str, inproceedings_title: str, inpro
 def get_all_articles():
     user_id = 1 #users.user_id() or session["user_id"]
 
-    sql = text("""SELECT 
+    sql = text("""SELECT
+                    id,
+                    user_id,
                     article_author, 
                     article_title, 
                     article_journal, 
@@ -144,7 +146,52 @@ def get_all_articles():
                """) 
 
     result = db.session.execute(sql, {"user_id": user_id})
-    print("sources.py / get_all: result = ", result)
+    print("sources.py / get_all_articles: result = ", result)
+
+    sources_by_user = result.fetchall()
+    return sources_by_user
+
+def get_all_books():
+    user_id = 1 #users.user_id() or session["user_id"]
+
+    sql = text("""SELECT 
+                    id,
+                    user_id,
+                    book_author, 
+                    book_title,
+                    book_publisher,
+                    book_address,
+                    book_year
+               FROM books
+               WHERE user_id=:user_id
+               """) 
+
+    result = db.session.execute(sql, {"user_id": user_id})
+    print("sources.py / get_all_books: result = ", result)
+
+    sources_by_user = result.fetchall()
+    return sources_by_user
+
+def get_all_inproceedings():
+    user_id = 1 #users.user_id() or session["user_id"]
+
+    sql = text("""SELECT 
+                    id,
+                    user_id,
+                    inproceedings_author, 
+                    inproceedings_title,
+                    inproceedings_booktitle,
+                    inproceedings_series,
+                    inproceedings_year, 
+                    inproceedings_pages,
+                    inproceedings_publisher,
+                    inproceedings_address
+               FROM inproceedings
+               WHERE user_id=:user_id
+               """) 
+
+    result = db.session.execute(sql, {"user_id": user_id})
+    print("sources.py / get_all_books: result = ", result)
 
     sources_by_user = result.fetchall()
     return sources_by_user
