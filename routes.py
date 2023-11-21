@@ -4,8 +4,11 @@ import sources
 
 @app.route("/")
 def index():
-    result = sources.get_all_articles()
-    return render_template("index.html", references=result)
+    if session.get["user_id"]:
+        result = sources.get_all_articles()
+        return render_template("index.html", references=result)
+    else:
+        redirect('/login')
     
 @app.route("/add_reference", methods=["GET", "POST"])
 def add_reference():
