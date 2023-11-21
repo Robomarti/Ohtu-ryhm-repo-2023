@@ -1,8 +1,12 @@
 from db import db
 from sqlalchemy.sql import text
+from flask import session
 
 def add_article(article_author: str, article_title: str, article_journal: str, article_year: int, article_volume: str, article_number: int, article_pages: str):
-    user_id = 1 #users.user_id() or session["user_id"]
+    user_id = session.get["user_id"]
+    if not user_id:
+        return False
+
     print("sources.py / add! author = ", article_author)
     sql = text("""INSERT INTO articles (
                         user_id,
@@ -46,7 +50,10 @@ def add_article(article_author: str, article_title: str, article_journal: str, a
     return True
 
 def add_book(book_author: str, book_title: str, book_publisher: str, book_address: str, book_year: int):
-    user_id = 1 #users.user_id() or session["user_id"]
+    user_id = session.get["user_id"]
+    if not user_id:
+        return False
+
     print("sources.py / add! author = ", book_author)
     sql = text("""INSERT INTO books (
                         user_id,
@@ -83,7 +90,10 @@ def add_book(book_author: str, book_title: str, book_publisher: str, book_addres
     return True
 
 def add_inproceedings(inproceedings_author: str, inproceedings_title: str, inproceedings_booktitle: str, inproceedings_series: str, inproceedings_year: int, inproceedings_pages: str, inproceedings_publisher: str, inproceedings_address: str):
-    user_id = 1 #users.user_id() or session["user_id"]
+    user_id = session.get["user_id"]
+    if not user_id:
+        return False
+
     print("sources.py / add! author = ", inproceedings_author)
     sql = text("""INSERT INTO inproceedings (
                         user_id,
@@ -129,7 +139,9 @@ def add_inproceedings(inproceedings_author: str, inproceedings_title: str, inpro
     return True
 
 def get_all_articles():
-    user_id = 1 #users.user_id() or session["user_id"]
+    user_id = session.get["user_id"]
+    if not user_id:
+        return False
 
     sql = text("""SELECT
                     id,
@@ -152,7 +164,9 @@ def get_all_articles():
     return sources_by_user
 
 def get_all_books():
-    user_id = 1 #users.user_id() or session["user_id"]
+    user_id = session.get["user_id"]
+    if not user_id:
+        return False
 
     sql = text("""SELECT 
                     id,
@@ -173,7 +187,9 @@ def get_all_books():
     return sources_by_user
 
 def get_all_inproceedings():
-    user_id = 1 #users.user_id() or session["user_id"]
+    user_id = session.get["user_id"]
+    if not user_id:
+        return False
 
     sql = text("""SELECT 
                     id,
