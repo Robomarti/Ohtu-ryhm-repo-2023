@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, session
-import sources
+import sources, users
 
 @app.route("/")
 def index():
@@ -16,7 +16,6 @@ def add_reference():
         return render_template("add_reference.html")
     
     if request.method == "POST":
-        print("add_reference: POST!")
         sources.add(
             request.form["author"], 
             request.form["organization"], 
@@ -38,7 +37,6 @@ def login():
             return render_template("login.html")
 
     if request.method == "POST":
-        # log in user if success else render error
         username = request.form["username"]
         password = request.form["password"]
         if users.login(username, password):
@@ -47,6 +45,24 @@ def login():
         else:
             redirect("/login")
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "GET":
+        # if user already logged in then redirectd
+        if session.get("user_id"):
+            return redirect("/")
+        else:
+            return render_template("register.html")
+
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        password_confirmation = request.form["password_confirmation"]
+        if password == password_confirmation:
+            if users.register(username, password):
+                return redirect("/")
+        else:
+            return redirect("/register")
 
 #This is only for testing the database functions before ui
 @app.route("/db_write_test")
