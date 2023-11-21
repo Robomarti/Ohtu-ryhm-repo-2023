@@ -1,39 +1,41 @@
 from db import db
 from sqlalchemy.sql import text
 
-def add(author="", organization="", title="", year="2000", source_type="", pages="", doi=""):
+def add_article(article_author="", article_title="", article_journal="", article_year=2000, article_volume="", article_number=1, article_pages=""):
     owner_id = 1 #users.user_id() or session["user_id"]
-    print("sources / add! author = ", author)
+    print("sources / add! author = ", article_author)
     sql = text("""INSERT INTO sources (
-                        author, 
-                        organization, 
-                        title, 
-                        year, 
-                        source_type, 
-                        pages,
-                        doi, 
-                        owner_id
+                        owner_id,
+                        article_author, 
+                        article_title, 
+                        article_journal,
+                        article_year,
+                        article_volume,
+                        article_number,
+                        article_pages
+
                     ) 
                     VALUES (
-                        :author, 
-                        :organization, 
-                        :title, 
-                        :year, 
-                        :source_type, 
-                        :pages,
-                        :doi, 
-                        :owner_id
+                        :owner_id,
+                        :article_author, 
+                        :article_title,
+                        :article_journal.
+                        :article_year,
+                        :article_volume,
+                        :article_number,
+                        :article_pages
                     )""")
     
     try:
-        result = db.session.execute(sql, {"author": author, 
-                                 "organization": organization, 
-                                 "title": title, 
-                                 "year": year, 
-                                 "source_type": source_type, 
-                                 "pages": pages, 
-                                 "doi": doi, 
-                                 "owner_id": owner_id
+        result = db.session.execute(sql, {
+                                "owner_id": owner_id,
+                                "article_author": article_author, 
+                                 "article_title": article_title,
+                                 "article_journal": article_journal,
+                                 "article_year": article_year,
+                                 "article_volume": article_volume,
+                                 "article_number": article_number,
+                                 "article_pages": article_pages
                                  }
                             )
         db.session.commit()
