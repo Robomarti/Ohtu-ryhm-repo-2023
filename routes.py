@@ -1,12 +1,15 @@
 from app import app
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, session
 import sources
 
 
 @app.route("/")
 def index():
-    result = sources.get_all()
-    return render_template("index.html", references=result)
+    if session.get["user_id"]:
+        result = sources.get_all_articles()
+        return render_template("index.html", references=result)
+    else:
+        redirect('/login')
     
 @app.route("/add_reference", methods=["GET", "POST"])
 def add_reference():
@@ -25,6 +28,25 @@ def add_reference():
             request.form["doi"]
             )
         return redirect("/")
+    
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        # if user already logged in then redirect
+        if session.get("user_id"):
+            return redirect("/")
+        else:
+            return render_template("login.html")
+
+    if request.method == "POST":
+        # log in user if success else render error
+        username = request.form["username"]
+        password = request.form["password"]
+        if users.login(username, password):
+            # users.py sets session["user_id"]
+            return redirect("/")
+        else:
+            redirect("/login")
 
 
 #This is only for testing the database functions before ui
