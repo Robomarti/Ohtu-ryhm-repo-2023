@@ -211,3 +211,19 @@ def get_all_inproceedings():
 
     sources_by_user = result.fetchall()
     return sources_by_user
+
+
+def delete_source(source_type, source_id):
+    user_id = session.get["user_id"]
+    if not user_id:
+        return False
+    
+    sql = text("DELETE FROM :table WHERE (id = :id AND user_id=:user_id);")
+
+    try:
+        db.session.execute(sql, {"table": source_type, "id": source_id, "user_id": user_id})
+        db.session.commit()
+
+    except:
+        return False
+    return True
