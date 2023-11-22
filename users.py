@@ -26,7 +26,7 @@ def login(username, password):
     if not user:
         return False
     else:
-        if check_password_hash(user.password, password):
+        if check_password_hash(user.password_hash, password):
             session["user_id"] = user.id
             return True
         else:

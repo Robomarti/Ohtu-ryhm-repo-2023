@@ -139,7 +139,7 @@ def add_inproceedings(inproceedings_author: str, inproceedings_title: str, inpro
     return True
 
 def get_all_articles():
-    user_id = session.get["user_id"]
+    user_id = session.get("user_id")
     if not user_id:
         return False
 
