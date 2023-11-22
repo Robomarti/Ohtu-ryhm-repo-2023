@@ -2,25 +2,69 @@
 <html>
 <body>
     <h1>References</h1>
-    <a href="/add_reference">Add new reference</a>
-    <hr>
-    {% for reference in references %}
-        Title: 
-        {{ reference.title }}<br>
+    <a href="/choose_source_type">Add new reference</a>
+    <br>
+    <a href="/login">Log out</a>
+
+    <h2>Articles</h2>
+
+    {% for article in articles %}
         Author:
-        {{ reference.author }}<br>
-        Organization:
-        {{ reference.organization }}<br>
+        {{ article.article_author }}<br>
+        Title:
+        {{ article.article_title }}<br>
+        Journal:
+        {{ article.article_journal }}<br>
         Year:
-        {{ reference.year }}<br>
-        Source type: 
-        {{ reference.source_type }}<br>
+        {{ article.article_year }}<br>
+        Volume:
+        {{ article.article_volume }}<br>
+        Number:
+        {{ article.article_number }}<br>
         Pages:
-        {{ reference.pages }}<br>
-        DOI: 
-        {{ reference.doi }}<br>
+        {{ article.article_pages }}<br>
+        <a href="/delete_article/{{ article.id }}">delete</a><br>
         <p>
     {% endfor %}
-    <hr>
+
+    <h2>Books</h2>
+
+    {% for book in books %}
+        Author:
+        {{ book.book_author }}<br>
+        Title:
+        {{ book.book_title }}<br>
+        Publisher:
+        {{ book.book_publisher }}<br>
+        Address:
+        {{ book.book_address }}<br>
+        Year:
+        {{ book.book_year }}<br>
+        <a href="/delete_book/{{ book.id }}">delete</a><br>
+        <p>
+    {% endfor %}
+
+    <h2>Inproceeding</h2>
+
+    {% for inproceeding in inproceedings %}
+        Author:
+        {{ inproceedings.inproceedings_author }}<br>
+        Title:
+        {{ inproceedings.inproceedings_title }}<br>
+        Booktitle:
+        {{ inproceedings.inproceedings_booktitle }}<br>
+        series:
+        {{ inproceedings.inproceedings_series }}<br>
+        Year:
+        {{ inproceedings.inproceedings_year }}<br>
+        Pages:
+        {{ inproceedings.inproceedings_pages }}<br>
+        Publisher:
+        {{ inproceedings.inproceedings_publisher }}<br>
+        Address:
+        {{ inproceedings.inproceedings_address }}<br>
+        <a href="/delete_inproceeding/{{ inproceeding.id }}">delete</a><br>
+        <p>
+    {% endfor %}
 </body>
 </html>
