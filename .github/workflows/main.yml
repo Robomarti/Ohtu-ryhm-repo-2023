@@ -20,4 +20,4 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Lint
-        run: poetry run pylint src/app.py
+        run: poetry run pylint src
