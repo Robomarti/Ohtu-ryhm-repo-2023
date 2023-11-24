@@ -1,9 +1,7 @@
-from app import app
+from src.app import app
 from flask_sqlalchemy import SQLAlchemy
 from os import getenv, environ
 import dotenv
-
-
 
 if environ.get("FLASK_ENV") == "test":
     app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///:memory:'

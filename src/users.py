@@ -1,5 +1,5 @@
 from flask import session
-from db import db
+from src.db import db
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.sql import text
 import secrets

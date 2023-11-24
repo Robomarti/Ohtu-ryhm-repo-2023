@@ -1,6 +1,7 @@
-from app import app
+from src.app import app
 from flask import render_template, request, redirect, session
-import sources, users
+import src.sources as sources
+import src.users as users
 
 @app.route("/")
 def index():
@@ -10,20 +11,20 @@ def index():
     else:
         return redirect('/login')
     
-@app.route("/add_reference", methods=["GET", "POST"])
-def add_reference():
+@app.route("/add_article", methods=["GET", "POST"])
+def add_article():
     if request.method == "GET":
-        return render_template("add_reference.html")
+        return render_template("add_article.html")
     
     if request.method == "POST":
-        sources.add(
-            request.form["author"], 
-            request.form["organization"], 
-            request.form["title"], 
-            request.form["year"], 
-            request.form["source_type"], 
-            request.form["pages"], 
-            request.form["doi"]
+        sources.add_article(
+            request.form["author"],
+            request.form["title"],
+            request.form["journal"],
+            request.form["year"],
+            request.form["volume"],
+            request.form["number"],
+            request.form["pages"]
             )
         return redirect("/")
     
