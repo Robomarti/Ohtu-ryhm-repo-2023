@@ -20,6 +20,6 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run tests
-        run: poetry run pytest
+        run: FLASK_ENV=test poetry run pytest
       - name: Lint
         run: poetry run pylint src
