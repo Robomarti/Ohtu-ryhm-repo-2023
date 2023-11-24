@@ -28,6 +28,6 @@ jobs:
       - name: Run tests
         run: FLASK_ENV=test poetry run pytest
       - name: Run robot tests
-        run: bash run_robot_tests.sh
+        run: FLASK_ENV=test poetry run bash run_robot_tests.sh
       - name: Lint
         run: poetry run pylint src
