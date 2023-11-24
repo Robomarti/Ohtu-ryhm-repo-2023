@@ -1,11 +1,13 @@
+"""Contains functions for user account creation and logging in"""
+
 from flask import session
-from src.db import db
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.sql import text
-import secrets
-
+from src.db import db
 
 def register(username, password):
+    """Creates a new account for a user"""    
+
     hash_value = generate_password_hash(password)
 
     try:
@@ -22,9 +24,12 @@ def register(username, password):
     except Exception as exception:
         print("users.py -> register: " , exception)
         return False
+
     return login(username, password)
 
 def login(username, password):
+    """Logs the user in"""    
+
     sql = text(
         """SELECT 
             id, 
@@ -46,9 +51,10 @@ def login(username, password):
         else:
             return False
 
-
 def logout():
+    """Logs the user out"""
     session.clear()
 
 def user_id():
+    """Returns the currently logged in user's id or 0 if no user is logged in"""
     return session.get("user_id", 0)

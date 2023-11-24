@@ -16,6 +16,7 @@
 | Sanni | 20.11. | 0,5 | index.html luotu, jonka avulla käyttäjä näkee kaikki lisätyt lähteet |
 | Santtu | 20.11.  | 3 | Robotframework testi referencin lisäykselle |
 | Roberto | 21.11. | 2,5 | Sprintin suunnittelua, tietokantahakujen päivitystä ja refaktorointia. |
+| Roberto | 24.11. | 1 | Muokkasin koodia siten, että sovellus toimii verkossa paremmin. Paransin Pylint-scorea. |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
