@@ -9,19 +9,32 @@ def register(username, password):
     hash_value = generate_password_hash(password)
 
     try:
-        sql = text("""INSERT INTO users (user_name, password_hash)
-                   VALUES (:user_name,:password_hash)""")
+        sql = text("""INSERT INTO users (
+                        user_name, 
+                        password_hash)
+                   VALUES (
+                        :user_name,
+                        :password_hash)""")
+        
         db.session.execute(
             sql, {"user_name": username, "password_hash": hash_value})
         db.session.commit()
-    except Exception: #tässä oli ennen pelkkä except
-        print(Exception)
+    except Exception as exception:
+        print("users.py -> register: " , exception)
         return False
     return login(username, password)
 
 def login(username, password):
     sql = text(
-        "SELECT id, user_name, password_hash FROM users WHERE user_name=:user_name")
+        """SELECT 
+            id, 
+            user_name, 
+            password_hash 
+        FROM 
+            users 
+        WHERE 
+            user_name=:user_name""")
+    
     result = db.session.execute(sql, {"user_name": username})
     user = result.fetchone()
     if not user:
