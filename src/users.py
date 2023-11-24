@@ -7,14 +7,15 @@ import secrets
 
 def register(username, password):
     hash_value = generate_password_hash(password)
-    
+
     try:
         sql = text("""INSERT INTO users (user_name, password_hash)
                    VALUES (:user_name,:password_hash)""")
         db.session.execute(
             sql, {"user_name": username, "password_hash": hash_value})
         db.session.commit()
-    except:
+    except Exception: #tässä oli ennen pelkkä except
+        print(Exception)
         return False
     return login(username, password)
 

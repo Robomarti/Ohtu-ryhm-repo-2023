@@ -15,7 +15,7 @@ def index():
 def add_article():
     if request.method == "GET":
         return render_template("add_article.html")
-    
+
     if request.method == "POST":
         sources.add_article(
             request.form["author"],
@@ -27,7 +27,7 @@ def add_article():
             request.form["pages"]
             )
         return redirect("/")
-    
+   
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
