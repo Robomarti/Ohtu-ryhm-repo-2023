@@ -7,6 +7,8 @@ ${SERVER}  localhost:5000
 ${DELAY}  0.25 seconds
 ${HOME_URL}  http://${SERVER}
 ${ADD_REFERENCE_URL}  http://${SERVER}/add_reference
+${LOGIN_URL}  http://${SERVER}/login
+${REGISTER_URL}  http://${SERVER}/register
 
 *** Keywords ***
 Open And Configure Browser
@@ -24,6 +26,16 @@ Go To Add Reference Page
 
 Go To Home Page
     Go to  ${HOME_URL}
+
+Go To Login Page
+    Go To  ${LOGIN_URL}
+
+Go To Signin Page
+    Go To  ${REGISTER_URL}
+
+Should Be Logged In
+    Go To Home Page
+    Page Should Contain  References
 
 Reference should be on Home Page
     [Arguments]  ${title}  ${author}  ${organization}  ${year}  ${source_type}  ${pages}  ${doi}
