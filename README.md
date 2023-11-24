@@ -1,4 +1,7 @@
 # Ohtu-ryhm-repo-2023
+
+![GHA workflow badge](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/workflows/CI/badge.svg)
+
 Link to the backlog: https://github.com/users/Robomarti/projects/1/views/1
 
 
