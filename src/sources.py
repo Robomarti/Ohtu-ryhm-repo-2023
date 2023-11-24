@@ -1,15 +1,13 @@
-from db import db
+from src.db import db
 from sqlalchemy.sql import text
 from flask import session
 
-
-
-def add_article(article_author: str, 
-                article_title: str, 
-                article_journal: str, 
-                article_year: int, 
-                article_volume: str, 
-                article_number: int, 
+def add_article(article_author: str,
+                article_title: str,
+                article_journal: str,
+                article_year: int,
+                article_volume: str,
+                article_number: int,
                 article_pages: str):
     
     if session.get("user_id") is None:

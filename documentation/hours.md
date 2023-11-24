@@ -3,7 +3,7 @@
 ## Sprint 1
 | Kuka | päivä | aika | mitä tein  |
 | :-----| :----:|:-----| :-----|
-| Kaikki | 13.11. | 2,5 | Aloitustilaisuus ja suunnittelua |
+| Kaikki | 14.11. | 2,5 | Aloitustilaisuus ja suunnittelua |
 | Saija | 15.11. | 1 | Projektin pystytys ja tietokantataulun luonti |
 | Saija |  | 1,5 | Lisättiin luokat db.py ja sources.py, joilla voidaan tallentaa lähteitä tietokantaan, ja hakea tallennetut lähteet |
 | Saija | 16.11. | 0,5 | Testausta, pieni korjaus ja työaikakirjanpidon päivitys |
@@ -15,13 +15,14 @@
 | Roberto | 20.11.  | 3,5 | Toin sovelluksen verkkoon Render:in avulla, ja yhdistin tietokannan verkkoon ElephantSql:n avulla.  |
 | Sanni | 20.11. | 0,5 | index.html luotu, jonka avulla käyttäjä näkee kaikki lisätyt lähteet |
 | Santtu | 20.11.  | 3 | Robotframework testi referencin lisäykselle |
+| Roberto | 21.11. | 2,5 | Sprintin suunnittelua, tietokantahakujen päivitystä ja refaktorointia. |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
 | Arttu | 6 |  |  |  |
-| Roberto  | 6 |  |  |  |
+| Roberto  | 8.5 |  |  |  |
 | Saija | 6 |  |  |  |
 | Sanni | 6 |  |  |  |
 | Santtu | 6 |  |  |  |
-| yht. | 30 |  |  |  |
+| yht. | 32.5 |  |  |  |
