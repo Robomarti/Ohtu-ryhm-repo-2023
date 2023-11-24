@@ -4,11 +4,11 @@ import sources, users
 
 @app.route("/")
 def index():
-    if session.get["user_id"]:
+    if session.get("user_id"):
         result = sources.get_all_articles()
         return render_template("index.html", references=result)
     else:
-        redirect('/login')
+        return redirect('/login')
     
 @app.route("/add_reference", methods=["GET", "POST"])
 def add_reference():
@@ -43,7 +43,7 @@ def login():
             # users.py sets session["user_id"]
             return redirect("/")
         else:
-            redirect("/login")
+            return redirect("/login")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -57,12 +57,15 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        password_confirmation = request.form["password_confirmation"]
-        if password == password_confirmation:
-            if users.register(username, password):
-                return redirect("/")
+        if users.register(username, password):
+            return redirect("/")
         else:
             return redirect("/register")
+        
+@app.route("/logout")
+def logout():
+    users.logout()
+    return redirect("/login")
 
 #These are only for testing the database functions before ui:
 @app.route("/db_write_test")

@@ -159,7 +159,8 @@ def add_inproceedings(inproceedings_author: str,
     return True
 
 def get_all_articles():
-    if session.get("user_id") is None:
+    user_id = session.get("user_id")
+    if not user_id:
         return False
     user_id = session["user_id"]
 
