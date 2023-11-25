@@ -8,7 +8,6 @@ from os import getenv, environ
 class AppLibrary:
     def setup(self):
         if environ.get("FLASK_ENV") == "test":
-            app.config["SECRET_KEY"] = getenv("SECRET_KEY")
             self.create_tables(self)
 
     def create_tables(self):
