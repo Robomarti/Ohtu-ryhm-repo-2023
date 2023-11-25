@@ -58,3 +58,9 @@ def logout():
 def user_id():
     """Returns the currently logged in user's id or 0 if no user is logged in"""
     return session.get("user_id", 0)
+
+#testing
+def get_users():
+    sql = text(f"SELECT * FROM users;")
+    result = db.session.execute(sql)
+    return result.fetchall()

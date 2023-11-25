@@ -1,4 +1,4 @@
-Run Robotframework tests in root with poetry shell then robot tests.
+Run Robotframework tests in root with poetry shell then robot src/tests.
 
 Santtu: Weird bug when running robot tests; chrome starts running in background and eats up the CPU,
 if I run the tests multiple times this becomes more severe and locks up my PC. Fixed by killing the chrome task in task manager,

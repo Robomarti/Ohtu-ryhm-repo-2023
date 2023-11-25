@@ -10,7 +10,6 @@ done
 
 # suoritetaan testit
 poetry run robot src/tests
-
 status=$?
 
 # pysäytetään Flask-palvelin portissa 5000

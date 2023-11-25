@@ -1,4 +1,5 @@
 from src.app import app
+from src.AppLibrary import AppLibrary
 from flask import render_template, request, redirect, session
 import src.sources as sources
 import src.users as users
@@ -7,7 +8,7 @@ import src.users as users
 def index():
     if session.get("user_id"):
         result = sources.get_all_articles()
-        return render_template("index.html", references=result)
+        return render_template("index.html", articles=result)
     else:
         return redirect('/login')
     
@@ -96,3 +97,11 @@ def db_get_all_test():
     data = sources.get_all("books", 7)
     print("routes.py / db_get_all_test: data = ", data)
     return ("Hello db_get_all_test!! <p>data: <p>" + str(data))
+
+@app.route("/db_initialize")
+def db_initialize():
+    AppLibrary.setup(AppLibrary)
+    data = users.get_users()
+    print("All users: ")
+    print(data)
+    return "Database should now be initialized\n"

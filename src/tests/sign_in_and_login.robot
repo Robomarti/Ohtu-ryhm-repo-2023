@@ -1,29 +1,20 @@
 *** Settings ***
 Resource  resource.robot
-Suite Setup  Open And Configure Browser
+Resource  sign_in_and_login_resource.robot
+Suite Setup  Open And Configure Browser And Initialize Database
 Suite Teardown  Close Browser
 
 *** Test Cases ***
-Register User Succesfully
+Register User Succesfully And Logout
     Go To Signin Page
-    Set Credentials  testi  robot
+    Set User Credentials  testi  robot
     Submit Signin Credentials
     Should Be Logged In
+    Logout
 
-Loign Succesfully
+Loign Succesfully And Logout
     Go To Login Page
-    Set Credentials  testi  robot
+    Set User Credentials  testi  robot
     Submit Login Credentials
     Should Be Logged In
-
-*** Keywords ***
-Set Credentials
-    [Arguments]  ${username}  ${password}
-    Input Text  username  ${username}
-    Input Text  password  ${password}
-
-Submit Login Credentials
-    Click Button  Login
-
-Submit Signin Credentials
-    Click Button  Register
+    Logout

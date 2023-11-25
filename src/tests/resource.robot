@@ -1,28 +1,32 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library  ../AppLibrary.py
 
 *** Variables ***
 ${SERVER}  localhost:5000
 ${DELAY}  0.25 seconds
 ${HOME_URL}  http://${SERVER}
-${ADD_REFERENCE_URL}  http://${SERVER}/add_reference
+${ADD_ARTICLE_URL}  http://${SERVER}/add_article
 ${LOGIN_URL}  http://${SERVER}/login
 ${REGISTER_URL}  http://${SERVER}/register
+${DB_INITIALIZE_URL}  http://${SERVER}/db_initialize
 
 *** Keywords ***
-Open And Configure Browser
+Open And Configure Browser And Initialize Database
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
     Call Method    ${options}    add_argument    --no-sandbox
     # Call Method  ${options}  add_argument  --headless
     Open Browser  browser=chrome  options=${options}
     Set Selenium Speed  ${DELAY}
+    Initialize Database
 
-Add Reference Page Should Be Open
-    Title Should Be  Add reference
+Initialize Database
+    Go To  ${DB_INITIALIZE_URL}
 
-Go To Add Reference Page
-    Go To  ${ADD_REFERENCE_URL}
+Add Article Page Should Be Open
+    Title Should Be  Add article
+
+Go To Add Article Page
+    Go To  ${ADD_ARTICLE_URL}
 
 Go To Home Page
     Go to  ${HOME_URL}
@@ -37,13 +41,13 @@ Should Be Logged In
     Go To Home Page
     Page Should Contain  References
 
-Reference should be on Home Page
-    [Arguments]  ${title}  ${author}  ${organization}  ${year}  ${source_type}  ${pages}  ${doi}
+Article should be on Home Page
+    [Arguments]  ${author}  ${title}  ${journal}  ${year}  ${volume}  ${number}  ${pages}
     Go To Home Page
-    Page Should Contain  ${title}
     Page Should Contain  ${author}
-    Page Should Contain  ${organization}
+    Page Should Contain  ${title}
+    Page Should Contain  ${journal}
     Page Should Contain  ${year}
-    Page Should Contain  ${source_type}
+    Page Should Contain  ${volume}
+    Page Should Contain  ${number}
     Page Should Contain  ${pages}
-    Page Should Contain  ${doi}
