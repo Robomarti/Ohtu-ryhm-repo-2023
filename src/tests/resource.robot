@@ -76,3 +76,4 @@ Inproceedings should be on Home Page
     Page Should Contain  ${pages}
     Page Should Contain  ${publisher}
     Page Should Contain  ${address}
+    
