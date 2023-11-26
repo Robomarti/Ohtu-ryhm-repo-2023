@@ -2,7 +2,6 @@
 # FLASK_ENV=test poetry run pytest
 # RUN COVERAGE IN POETRY SHELL:
 # FLASK_ENV=test coverage run --branch -m pytest
-# coverage report -m pytest tests/sources_test.py
 
 import sys
 import os
@@ -19,7 +18,7 @@ from src.app import app
 from src.db import db 
 import sources
 
-class YourTestCase(unittest.TestCase):
+class SourcesTestCase(unittest.TestCase):
     def setUp(self):
         app.config["SECRET_KEY"] = 'testkey1testkey2testkey3testkey4' # For some reason could not get .env work here?
         app.test_request_context().push()
