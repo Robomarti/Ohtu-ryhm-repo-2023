@@ -7,27 +7,61 @@ import src.users as users
 @app.route("/")
 def index():
     if session.get("user_id"):
-        result = sources.get_all_articles()
-        return render_template("index.html", articles=result)
+        articles = sources.get_all_articles()
+        books = sources.get_all_books()
+        inproceedings = sources.get_all_inproceedings()
+        return render_template("index.html", articles=articles, books=books, inproceedings=inproceedings)
     else:
         return redirect('/login')
     
-@app.route("/add_article", methods=["GET", "POST"])
-def add_article():
+@app.route("/choose_source_type", methods=["GET", "POST"])
+def choose_source():
     if request.method == "GET":
-        return render_template("add_article.html")
+        if session.get("user_id"):
+            return render_template("choose_source_type.html")
+        return redirect("/login")
 
     if request.method == "POST":
-        sources.add_article(
-            request.form["author"],
-            request.form["title"],
-            request.form["journal"],
-            request.form["year"],
-            request.form["volume"],
-            request.form["number"],
-            request.form["pages"]
+        type = request.form.get('source_type')
+        if type =='article':
+            return render_template("add_article.html")
+        if type =='book':
+            return render_template("add_book.html")
+        return render_template("add_inproceedings.html")
+
+@app.route("/add_reference", methods=["POST"])
+def add_reference():
+    if request.method == "POST":
+        if request.form["source_type"] == "article":
+            sources.add_article(
+                request.form["author"],
+                request.form["title"],
+                request.form["journal"],
+                request.form["year"],
+                request.form["volume"],
+                request.form["number"],
+                request.form["pages"]
+                )
+        elif request.form["source_type"] == "book":
+            sources.add_book(
+                request.form["author"],
+                request.form["title"],
+                request.form["publisher"],
+                request.form["address"],
+                request.form["year"]
             )
-        return redirect("/")
+        else:
+            sources.add_inproceedings(
+                request.form["author"],
+                request.form["title"],
+                request.form["booktitle"],
+                request.form["series"],
+                request.form["year"],
+                request.form["pages"],
+                request.form["publisher"],
+                request.form["address"]
+            )
+    return redirect("/")
    
 @app.route("/login", methods=["GET", "POST"])
 def login():

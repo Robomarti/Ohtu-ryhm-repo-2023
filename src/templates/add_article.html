@@ -1,4 +1,4 @@
-<form action="/add_article" method="POST">
+<form action="/add_reference" method="POST">
     <h1>Add article</h1>
     Author
     <input type="text" name="author">
@@ -21,6 +21,7 @@
     Pages
     <input type="text" name="pages">
     <br>
+    <input type="hidden" name="source_type" value="article">
     <button type="submit">
         Add
     </button>
