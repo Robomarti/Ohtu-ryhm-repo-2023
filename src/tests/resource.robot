@@ -3,9 +3,9 @@ Library  SeleniumLibrary
 
 *** Variables ***
 ${SERVER}  localhost:5000
-${DELAY}  0.25 seconds
+${DELAY}  0.025 seconds
 ${HOME_URL}  http://${SERVER}
-${ADD_ARTICLE_URL}  http://${SERVER}/add_article
+${CHOOSE_SOURCE_TYPE_URL}  http://${SERVER}/choose_source_type
 ${LOGIN_URL}  http://${SERVER}/login
 ${REGISTER_URL}  http://${SERVER}/register
 ${DB_INITIALIZE_URL}  http://${SERVER}/db_initialize
@@ -25,11 +25,15 @@ Initialize Database
 Add Article Page Should Be Open
     Title Should Be  Add article
 
-Go To Add Article Page
-    Go To  ${ADD_ARTICLE_URL}
+Choose Source Type Page Should Be Open
+    Title Should Be  Choose source type
 
 Go To Home Page
     Go to  ${HOME_URL}
+
+Go To Choose Source Type Page
+    Go To Home Page
+    Click Link  Add new reference
 
 Go To Login Page
     Go To  ${LOGIN_URL}
@@ -51,3 +55,24 @@ Article should be on Home Page
     Page Should Contain  ${volume}
     Page Should Contain  ${number}
     Page Should Contain  ${pages}
+
+Book should be on Home Page
+    [Arguments]  ${author}  ${title}  ${publisher}  ${address}  ${year}
+    Go To Home Page
+    Page Should Contain  ${author}
+    Page Should Contain  ${title}
+    Page Should Contain  ${publisher}
+    Page Should Contain  ${address}
+    Page Should Contain  ${year}
+
+Inproceedings should be on Home Page
+    [Arguments]  ${author}  ${title}  ${booktitle}  ${series}  ${year}  ${pages}  ${publisher}  ${address}
+    Go To Home Page
+    Page Should Contain  ${author}
+    Page Should Contain  ${title}
+    Page Should Contain  ${booktitle}
+    Page Should Contain  ${series}
+    Page Should Contain  ${year}
+    Page Should Contain  ${pages}
+    Page Should Contain  ${publisher}
+    Page Should Contain  ${address}
