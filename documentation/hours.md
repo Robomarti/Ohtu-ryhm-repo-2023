@@ -15,6 +15,10 @@
 | Roberto | 20.11.  | 3,5 | Toin sovelluksen verkkoon Render:in avulla, ja yhdistin tietokannan verkkoon ElephantSql:n avulla.  |
 | Sanni | 20.11. | 0,5 | index.html luotu, jonka avulla käyttäjä näkee kaikki lisätyt lähteet |
 | Santtu | 20.11.  | 3 | Robotframework testi referencin lisäykselle |
+
+## Sprint 2
+| Kuka | päivä | aika | mitä tein  |
+| :-----| :----:|:-----| :-----|
 | Roberto | 21.11. | 2,5 | Sprintin suunnittelua, tietokantahakujen päivitystä ja refaktorointia. |
 | Arttu | 21.11.  | 3 | Kirjautuminen ja rekisteröinti |
 | Santtu | 21.11. | 0,5 | Github Actionsin ja pylintin setuppailua. |
@@ -42,5 +46,5 @@
 | Roberto  | 6 | 6,5 |  |  |
 | Saija | 6 | 6,5 |  |  |
 | Sanni | 6 | 6 |  |  |
-| Santtu | 6 |  |  |  |
+| Santtu | 6 | 6,5 |  |  |
 | yht. | 30 |  |  |  |
