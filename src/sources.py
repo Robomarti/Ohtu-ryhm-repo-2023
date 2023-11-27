@@ -9,7 +9,7 @@ def add_article(article_author: str,
                 article_volume: str,
                 article_number: int,
                 article_pages: str):
-    
+
     if session.get("user_id") is None:
         return False
     user_id = session["user_id"]
@@ -35,7 +35,7 @@ def add_article(article_author: str,
                     :article_number,
                     :article_pages
                 )""")
-    
+
     try:
         db.session.execute(sql, {
                     "user_id": user_id,
@@ -52,7 +52,7 @@ def add_article(article_author: str,
     except Exception as exception:
         print("sources.py -> add_article: " , exception)
         return False
-    
+
     return True
 
 def add_book(book_author: str,
@@ -60,7 +60,7 @@ def add_book(book_author: str,
              book_publisher: str,
              book_address: str,
              book_year: int):
-    
+
     if session.get("user_id") is None:
         return False
     user_id = session["user_id"]
@@ -82,7 +82,7 @@ def add_book(book_author: str,
                     :book_address,
                     :book_year
                 )""")
-    
+
     try:
         db.session.execute(sql, {
                     "user_id": user_id,
@@ -97,7 +97,7 @@ def add_book(book_author: str,
     except Exception as exception:
         print("sources.py -> add_book: Exception: ",  exception)
         return False
-    
+
     return True
 
 def add_inproceedings(inproceedings_author: str, 
@@ -135,7 +135,7 @@ def add_inproceedings(inproceedings_author: str,
                     :inproceedings_publisher,
                     :inproceedings_address
                 )""")
-    
+
     try:
         db.session.execute(sql, {
                     "user_id": user_id,

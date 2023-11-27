@@ -8,7 +8,7 @@ from os import getenv, environ
 class AppLibrary:
     def setup(self):
         if environ.get("FLASK_ENV") == "test":
-            self.create_tables(self)
+            self.create_tables()
 
     def create_tables(self):
             
