@@ -115,3 +115,10 @@ def register():
 def logout():
     users.logout()
     return redirect("/login")
+
+@app.route("/db_initialize")
+def db_initialize():
+    applibrary.setup_db()
+    data = users.get_users()
+    print(data)
+    return "Database should now be initialized\n"
