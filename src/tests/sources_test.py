@@ -270,6 +270,23 @@ class SourcesTestCase(unittest.TestCase):
                 2023)
             self.assertEqual(result, False)
 
+    def test_delete_book(self):
+        with app.test_request_context():
+            session["user_id"] = 1
+            result = sources.delete_source("books", 1)
+            self.assertEqual(result, True)
+
+            data = sources.get_all_books()
+            self.assertEqual(
+                data,
+                [(2, 
+                 1, 
+                 'Book Tester 2', 
+                 'Testbook2', 
+                 'Testbook Publishing Co.', 
+                 'Testbook address', 
+                 2020)])
+
     # Tests for articles:
     def test_get_all_articles(self):
         with app.test_request_context():
@@ -338,6 +355,25 @@ class SourcesTestCase(unittest.TestCase):
                 13, 
                 '30-35')
             self.assertEqual(result, False)
+
+    def test_delete_article(self):
+        with app.test_request_context():
+            session["user_id"] = 1
+            result = sources.delete_source("articles", 1)
+            self.assertEqual(result, True)
+
+            data = sources.get_all_articles()
+            self.assertEqual(
+                data,
+                [(2, 
+                  1, 
+                  'Test Article Writer 2', 
+                  'Test article 2', 
+                  'Article journal 2', 
+                  1992, 
+                  'Volume 2', 
+                  12, 
+                  '20-25')])
 
     # Tests for inproceedings:
     def test_get_all_inproceedings(self):
@@ -412,6 +448,26 @@ class SourcesTestCase(unittest.TestCase):
                                 'Publisher no. 3',
                                 'Address no. 3')
             self.assertEqual(result, False)
+    
+    def test_delete_inproceeding(self):
+        with app.test_request_context():
+            session["user_id"] = 1
+            result = sources.delete_source("inproceedings", 1)
+            self.assertEqual(result, True)
+
+            data = sources.get_all_inproceedings()
+            self.assertEqual(
+                data,
+                [(2,
+                1,
+                'Author2',
+                'Inproceedings no. 2',
+                'Book 2 of inproceedings',
+                'Serie 2',
+                2002,
+                '200',
+                'Publisher no. 2',
+                'Address no. 2')])
 
 if __name__ == '__main__':
     unittest.main()
