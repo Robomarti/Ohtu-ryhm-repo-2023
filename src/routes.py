@@ -1,5 +1,5 @@
 from src.app import app
-from src.AppLibrary import AppLibrary
+import src.AppLibrary as applibrary
 from flask import render_template, request, redirect, session
 from src import sources, users
 
@@ -147,8 +147,7 @@ def db_get_all_test():
 
 @app.route("/db_initialize")
 def db_initialize():
-    AppLibrary.setup(AppLibrary)
+    applibrary.setup_db()
     data = users.get_users()
-    print("All users: ")
     print(data)
     return "Database should now be initialized\n"
