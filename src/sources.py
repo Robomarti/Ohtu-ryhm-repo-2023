@@ -55,10 +55,10 @@ def add_article(article_author: str,
     
     return True
 
-def add_book(book_author: str, 
-             book_title: str, 
-             book_publisher: str, 
-             book_address: str, 
+def add_book(book_author: str,
+             book_title: str,
+             book_publisher: str,
+             book_address: str,
              book_year: int):
     
     if session.get("user_id") is None:
@@ -153,7 +153,7 @@ def add_inproceedings(inproceedings_author: str,
     except Exception as exception:
         print("sources.py -> add_article:", exception)
         return False
-    
+
     return True
 
 def get_all_articles():
@@ -179,7 +179,7 @@ def get_all_articles():
     result = db.session.execute(sql, {"user_id": user_id})
     articles_by_user = result.fetchall()
     print("sources.py / get_all_articles: articles_by_user = ", articles_by_user)
-    
+
     return articles_by_user
 
 def get_all_books():
@@ -187,7 +187,7 @@ def get_all_books():
         return False
     user_id = session["user_id"]
 
-    sql = text("""SELECT 
+    sql = text("""SELECT
                     id,
                     user_id,
                     book_author, 
@@ -211,7 +211,7 @@ def get_all_inproceedings():
         return False
     user_id = session["user_id"]
 
-    sql = text("""SELECT 
+    sql = text("""SELECT
                     id,
                     user_id,
                     inproceedings_author, 
@@ -234,16 +234,16 @@ def get_all_inproceedings():
 
 
 def delete_source(source_type, source_id):
-    
+
     if session.get("user_id") is None:
         return False
     user_id = session["user_id"]
 
-    
+
     allowed_source_types = ['books', 'articles', 'inproceedings']
     if source_type not in allowed_source_types:
         return False
-    
+
     sql = text(f"DELETE FROM {source_type} WHERE (id = :id AND user_id=:user_id);")
     print("sources.py / delete_source: sql = ", sql, {"id": str(source_id), "user_id": str(user_id)})
     try:
@@ -261,11 +261,11 @@ def get_all(source_type, source_id):
     if session.get("user_id") is None:
         return False
     user_id = session["user_id"]
-    
+
     allowed_source_types = ['books', 'articles', 'inproceedings']
     if source_type not in allowed_source_types:
         return None
-    
+
     sql = text(f"SELECT * FROM {source_type} WHERE user_id = :user_id;")
 
     result = db.session.execute(sql, {"user_id": str(user_id)})

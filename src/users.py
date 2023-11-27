@@ -17,7 +17,7 @@ def register(username, password):
                    VALUES (
                         :user_name,
                         :password_hash)""")
-        
+
         db.session.execute(
             sql, {"user_name": username, "password_hash": hash_value})
         db.session.commit()
@@ -39,7 +39,7 @@ def login(username, password):
             users 
         WHERE 
             user_name=:user_name""")
-    
+
     result = db.session.execute(sql, {"user_name": username})
     user = result.fetchone()
     if not user:
