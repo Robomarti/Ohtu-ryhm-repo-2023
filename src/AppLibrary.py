@@ -5,13 +5,10 @@ from flask import session
 from os import getenv, environ
 
 # Testausta varten
-class AppLibrary:
-    def setup(self):
-        if environ.get("FLASK_ENV") == "test":
-            self.create_tables()
 
-    def create_tables(self):
-            
+def setup_db():
+    if environ.get("FLASK_ENV") == "test":
+
         # Remove tables if they already exist
         try:
             sql = text("""DROP TABLE IF EXISTS books;""")
@@ -75,7 +72,7 @@ class AppLibrary:
             db.session.commit()
         except Exception as exception:
                 print("AppLibrary.py -> create_tables : Exception: ", exception)
-            
+
         # Initialise test database for articles:
         try: 
             sql = text("""CREATE TABLE articles (

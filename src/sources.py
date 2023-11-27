@@ -65,7 +65,7 @@ def add_book(book_author: str,
         return False
     user_id = session["user_id"]
 
-    print("sources.py / add_book! author = ", book_author)
+    # print("sources.py / add_book! author = ", book_author)
     sql = text("""INSERT INTO books (
                     user_id,
                     book_author,
@@ -178,7 +178,7 @@ def get_all_articles():
 
     result = db.session.execute(sql, {"user_id": user_id})
     articles_by_user = result.fetchall()
-    print("sources.py / get_all_articles: articles_by_user = ", articles_by_user)
+    # print("sources.py / get_all_articles: articles_by_user = ", articles_by_user)
 
     return articles_by_user
 
@@ -200,10 +200,10 @@ def get_all_books():
                """) 
 
     result = db.session.execute(sql, {"user_id": user_id})
-    print("sources.py / get_all_books: result = ", result)
+    # print("sources.py / get_all_books: result = ", result)
 
     books_by_user = result.fetchall()
-    print("sources.py / get_all_books: books_by_user = ", books_by_user)
+    # print("sources.py / get_all_books: books_by_user = ", books_by_user)
     return books_by_user
 
 def get_all_inproceedings():
@@ -228,7 +228,7 @@ def get_all_inproceedings():
 
     result = db.session.execute(sql, {"user_id": user_id})
     inproceedings_by_user = result.fetchall()
-    print("sources.py / get_all_inproceedings: inproceedings_by_user = ", inproceedings_by_user)
+    # print("sources.py / get_all_inproceedings: inproceedings_by_user = ", inproceedings_by_user)
 
     return inproceedings_by_user
 
@@ -269,8 +269,8 @@ def get_all(source_type, source_id):
     sql = text(f"SELECT * FROM {source_type} WHERE user_id = :user_id;")
 
     result = db.session.execute(sql, {"user_id": str(user_id)})
-    print("sources.py / get_all_books: result = ", result)
+    # print("sources.py / get_all_books: result = ", result)
 
     books_by_user = result.fetchall()
-    print("sources.py / get_all_books: books_by_user = ", books_by_user)
+    # print("sources.py / get_all_books: books_by_user = ", books_by_user)
     return books_by_user
