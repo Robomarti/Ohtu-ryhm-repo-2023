@@ -1,8 +1,7 @@
 from src.app import app
 from src.AppLibrary import AppLibrary
 from flask import render_template, request, redirect, session
-import src.sources as sources
-import src.users as users
+from src import sources, users
 
 @app.route("/")
 def index():
@@ -10,10 +9,14 @@ def index():
         articles = sources.get_all_articles()
         books = sources.get_all_books()
         inproceedings = sources.get_all_inproceedings()
-        return render_template("index.html", articles=articles, books=books, inproceedings=inproceedings)
-    else:
-        return redirect('/login')
-    
+        return render_template(
+            "index.html", 
+            articles=articles,
+            books=books,
+            inproceedings=inproceedings
+            )
+    return redirect('/login')
+
 @app.route("/choose_source_type", methods=["GET", "POST"])
 def choose_source():
     if request.method == "GET":
@@ -22,10 +25,10 @@ def choose_source():
         return redirect("/login")
 
     if request.method == "POST":
-        type = request.form.get('source_type')
-        if type =='article':
+        source_type = request.form.get('source_type')
+        if source_type =='article':
             return render_template("add_article.html")
-        if type =='book':
+        if source_type =='book':
             return render_template("add_book.html")
         return render_template("add_inproceedings.html")
 
@@ -50,7 +53,7 @@ def add_reference():
                 request.form["address"],
                 request.form["year"]
             )
-        else:
+        elif request.form["source_type"] == "inproceedings":
             sources.add_inproceedings(
                 request.form["author"],
                 request.form["title"],
@@ -62,15 +65,13 @@ def add_reference():
                 request.form["address"]
             )
     return redirect("/")
-   
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        # if user already logged in then redirect
         if session.get("user_id"):
             return redirect("/")
-        else:
-            return render_template("login.html")
+        return render_template("login.html")
 
     if request.method == "POST":
         username = request.form["username"]
@@ -78,8 +79,7 @@ def login():
         if users.login(username, password):
             # users.py sets session["user_id"]
             return redirect("/")
-        else:
-            return redirect("/login")
+        return redirect("/login")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -87,17 +87,15 @@ def register():
         # if user already logged in then redirectd
         if session.get("user_id"):
             return redirect("/")
-        else:
-            return render_template("sign_in.html")
+        return render_template("sign_in.html")
 
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if users.register(username, password):
             return redirect("/")
-        else:
-            return redirect("/register")
-        
+        return redirect("/register")
+
 @app.route("/logout")
 def logout():
     users.logout()
