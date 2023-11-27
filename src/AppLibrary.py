@@ -6,8 +6,12 @@ from os import getenv, environ
 
 # Testausta varten
 
+<<<<<<< HEAD
 def setup_db():
     if environ.get("FLASK_ENV") == "test":
+=======
+    def create_tables(self):
+>>>>>>> 657bb7fa6e646b3d974c52068e7db2a385c9598f
 
         # Remove tables if they already exist
         try:
@@ -24,7 +28,7 @@ def setup_db():
             print("AppLibrary.py -> create_tables : Exception: ", exception)
 
         # Initialise test database for books:
-        try: 
+        try:
             sql = text("""CREATE TABLE books (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             user_id INT,
@@ -71,10 +75,14 @@ def setup_db():
             db.session.execute(sql)
             db.session.commit()
         except Exception as exception:
+<<<<<<< HEAD
                 print("AppLibrary.py -> create_tables : Exception: ", exception)
+=======
+            print("AppLibrary.py -> create_tables : Exception: ", exception)
+>>>>>>> 657bb7fa6e646b3d974c52068e7db2a385c9598f
 
         # Initialise test database for articles:
-        try: 
+        try:
             sql = text("""CREATE TABLE articles (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             user_id INT,

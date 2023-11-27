@@ -4,3 +4,4 @@ __pycache__
 selenium-screenshot*
 .coverage
 htmlcov
+.vscode

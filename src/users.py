@@ -21,7 +21,9 @@ def register(username, password):
         db.session.execute(
             sql, {"user_name": username, "password_hash": hash_value})
         db.session.commit()
-    except Exception as exception:
+    # we disable this for now since we don't yet know what kind of
+    # exceptions we should expect
+    except Exception as exception: # pylint: disable=broad-exception-caught
         print("users.py -> register: " , exception)
         return False
 
@@ -44,12 +46,10 @@ def login(username, password):
     user = result.fetchone()
     if not user:
         return False
-    else:
-        if check_password_hash(user.password_hash, password):
-            session["user_id"] = user.id
-            return True
-        else:
-            return False
+    if check_password_hash(user.password_hash, password):
+        session["user_id"] = user.id
+        return True
+    return False
 
 def logout():
     """Logs the user out"""
@@ -61,6 +61,6 @@ def user_id():
 
 #testing
 def get_users():
-    sql = text(f"SELECT * FROM users;")
+    sql = text("SELECT * FROM users;")
     result = db.session.execute(sql)
     return result.fetchall()

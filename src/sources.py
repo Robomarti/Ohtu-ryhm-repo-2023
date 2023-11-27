@@ -2,7 +2,8 @@ from src.db import db
 from sqlalchemy.sql import text
 from flask import session
 
-def add_article(article_author: str,
+# we need all of the arguments
+def add_article(article_author: str, # pylint: disable=too-many-arguments
                 article_title: str,
                 article_journal: str,
                 article_year: int,
@@ -22,9 +23,7 @@ def add_article(article_author: str,
                     article_year,
                     article_volume,
                     article_number,
-                    article_pages
-
-                ) 
+                    article_pages) 
                 VALUES (
                     :user_id,
                     :article_author, 
@@ -49,7 +48,9 @@ def add_article(article_author: str,
                     }
                 )
         db.session.commit()
-    except Exception as exception:
+# we disable this for now since we don't yet know what kind of
+    # exceptions we should expect
+    except Exception as exception: # pylint: disable=broad-exception-caught
         print("sources.py -> add_article: " , exception)
         return False
 
@@ -100,19 +101,19 @@ def add_book(book_author: str,
 
     return True
 
-def add_inproceedings(inproceedings_author: str, 
-                      inproceedings_title: str, 
-                      inproceedings_booktitle: str, 
-                      inproceedings_series: str, 
-                      inproceedings_year: int, 
-                      inproceedings_pages: str, 
-                      inproceedings_publisher: str, 
+def add_inproceedings(inproceedings_author: str,
+                      inproceedings_title: str,
+                      inproceedings_booktitle: str,
+                      inproceedings_series: str,
+                      inproceedings_year: int,
+                      inproceedings_pages: str,
+                      inproceedings_publisher: str,
                       inproceedings_address: str):
     if session.get("user_id") is None:
         return False
     user_id = session["user_id"]
 
-    print("sources.py / add! author = ", inproceedings_author)
+    print("sources.py / add inproceedings! author = ", inproceedings_author)
     sql = text("""INSERT INTO inproceedings (
                     user_id,
                     inproceedings_author,
