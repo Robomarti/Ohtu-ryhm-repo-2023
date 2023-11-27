@@ -6,7 +6,7 @@ from sqlalchemy.sql import text
 from src.db import db
 
 def register(username, password):
-    """Creates a new account for a user"""    
+    """Creates a new account for a user"""
 
     hash_value = generate_password_hash(password)
 
@@ -21,25 +21,27 @@ def register(username, password):
         db.session.execute(
             sql, {"user_name": username, "password_hash": hash_value})
         db.session.commit()
+
     # we disable this for now since we don't yet know what kind of
-    # exceptions we should expect
-    except Exception as exception: # pylint: disable=broad-exception-caught
+    # exceptions we should expect:
+    # pylint: disable=broad-except
+    except Exception as exception:
         print("users.py -> register: " , exception)
         return False
 
     return login(username, password)
 
 def login(username, password):
-    """Logs the user in"""    
+    """Logs the user in"""
 
     sql = text(
-        """SELECT 
-            id, 
-            user_name, 
-            password_hash 
-        FROM 
-            users 
-        WHERE 
+        """SELECT
+            id,
+            user_name,
+            password_hash
+        FROM
+            users
+        WHERE
             user_name=:user_name""")
 
     result = db.session.execute(sql, {"user_name": username})

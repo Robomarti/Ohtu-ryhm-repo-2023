@@ -115,39 +115,3 @@ def register():
 def logout():
     users.logout()
     return redirect("/login")
-
-#These are only for testing the database functions before ui:
-@app.route("/db_write_test")
-def db_write_test():
-    session["user_id"] = 1
-    result = sources.add_book("Herra Huu", "Keittokirja", "Kustannus Oy", "osoite ", 2022)
-    print("routes.py / db_write_test: result = ", str(result))
-    return ("Hello db_write_test!!")
-
-@app.route("/db_read_test")
-def db_read_test():
-    session["user_id"] = 1
-    data = sources.get_all_books()
-    print("routes.py / db_read_test: data = ", data)
-    return ("Hello db_read_test!! <p>Sources: <p>" + str(data))
-
-@app.route("/db_delete_test")
-def db_delete_test():
-    session["user_id"] = 1
-    result = sources.delete_source("books", 7)
-    print("routes.py / db_delete_test: result = ", result)
-    return ("Hello db_delete_test!! <p>result: <p>" + str(result))
-
-@app.route("/db_get_all_test")
-def db_get_all_test():
-    session["user_id"] = 1
-    data = sources.get_all("books", 7)
-    print("routes.py / db_get_all_test: data = ", data)
-    return ("Hello db_get_all_test!! <p>data: <p>" + str(data))
-
-@app.route("/db_initialize")
-def db_initialize():
-    applibrary.setup_db()
-    data = users.get_users()
-    print(data)
-    return "Database should now be initialized\n"
