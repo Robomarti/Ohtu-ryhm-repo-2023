@@ -17,11 +17,15 @@
 | Santtu | 20.11.  | 3 | Robotframework testi referencin lisäykselle |
 | Roberto | 21.11. | 2,5 | Sprintin suunnittelua, tietokantahakujen päivitystä ja refaktorointia. |
 | Roberto | 24.11. | 1 | Muokkasin koodia siten, että sovellus toimii verkossa paremmin. Paransin Pylint-scorea. |
+| Arttu | 21.11.  | 3 | Kirjautuminen ja rekisteröinti |
+| Arttu | 22.11.  | 0,5 | Kirjautumisen ja rekisteröinnin viimeistely |
+| Arttu | 25.11.  | 1 | Eri lähdetyyppien routet |
+| Arttu | 20.11.  | 1,5 | Lähteiden poistaminen |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
-| Arttu | 6 |  |  |  |
+| Arttu | 6 | 6 |  |  |
 | Roberto  | 8.5 |  |  |  |
 | Saija | 6 |  |  |  |
 | Sanni | 6 |  |  |  |
