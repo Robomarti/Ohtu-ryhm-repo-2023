@@ -66,6 +66,21 @@ def add_reference():
             )
     return redirect("/")
 
+@app.route("/delete_article/<ref_id>")
+def delete_article(ref_id):
+    sources.delete_source("articles", ref_id)
+    return redirect("/")
+
+@app.route("/delete_book/<ref_id>")
+def delete_book(ref_id):
+    sources.delete_source("books", ref_id)
+    return redirect("/")
+
+@app.route("/delete_inproceeding/<ref_id>")
+def delete_inproceedings(ref_id):
+    sources.delete_source("inproceedings", ref_id)
+    return redirect("/")
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
