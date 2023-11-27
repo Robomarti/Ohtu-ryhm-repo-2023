@@ -6,5 +6,6 @@ from flask import Flask
 app = Flask(__name__)
 app.secret_key = getenv("SECRET_KEY")
 
-# we have to disable these pylint warnings since this is the way flask wants us to do things
+# we have to disable these pylint warnings since this order is
+# the way flask wants us to import things
 import src.routes # pylint: disable=unused-import, wrong-import-position
