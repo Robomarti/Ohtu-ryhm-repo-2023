@@ -11,7 +11,7 @@ class AppLibrary:
             self.create_tables()
 
     def create_tables(self):
-            
+
         # Remove tables if they already exist
         try:
             sql = text("""DROP TABLE IF EXISTS books;""")
@@ -27,7 +27,7 @@ class AppLibrary:
             print("AppLibrary.py -> create_tables : Exception: ", exception)
 
         # Initialise test database for books:
-        try: 
+        try:
             sql = text("""CREATE TABLE books (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             user_id INT,
@@ -74,10 +74,10 @@ class AppLibrary:
             db.session.execute(sql)
             db.session.commit()
         except Exception as exception:
-                print("AppLibrary.py -> create_tables : Exception: ", exception)
-            
+            print("AppLibrary.py -> create_tables : Exception: ", exception)
+
         # Initialise test database for articles:
-        try: 
+        try:
             sql = text("""CREATE TABLE articles (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             user_id INT,
