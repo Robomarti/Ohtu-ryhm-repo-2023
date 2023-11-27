@@ -18,6 +18,8 @@
 | Roberto | 21.11. | 2,5 | Sprintin suunnittelua, tietokantahakujen päivitystä ja refaktorointia. |
 | Arttu | 21.11.  | 3 | Kirjautuminen ja rekisteröinti |
 | Santtu | 21.11. | 0,5 | Github Actionsin ja pylintin setuppailua. |
+| Sanni | 21.11.  | 3 | Sprintin suunnittelua ja lomake lähdetyypin valitsemiselle luotu |
+| Sanni | 22.11. | 3 | html lomakkeet kaikille eri lähdetyypeille luotu ja index.html muokattu |
 | Arttu | 22.11.  | 0,5 | Kirjautumisen ja rekisteröinnin viimeistely |
 | Roberto | 24.11. | 1 | Muokkasin koodia siten, että sovellus toimii verkossa paremmin. Paransin Pylint-scorea. |
 | Santtu | 24.11. | 2 | Github Actions setuppailua ja Robot testejen tekoa. |
@@ -34,6 +36,6 @@
 | Arttu | 6 | 6 |  |  |
 | Roberto  | 6 | 6,5 |  |  |
 | Saija | 6 |  |  |  |
-| Sanni | 6 |  |  |  |
+| Sanni | 6 | 6 |  |  |
 | Santtu | 6 |  |  |  |
 | yht. | 30 |  |  |  |
