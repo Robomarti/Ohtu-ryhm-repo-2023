@@ -33,7 +33,7 @@
 | Arttu | 27.11.  | 1,5 | Lähteiden poistaminen |
 | Santtu | 27.11. | 1,5 | Robot testejen korjaamista. |
 | Roberto | 27.11. | 3 | Paransin Pylint-pisteitä ja integroin projektia verkkosivupalvelinta varten sopivammaksi. Aloitin burndown-kaavion laatimista. |
-| Saija | 25.11. | 1 | Yksikkötestit users.py-tiedostolle, pylint ja koodin siistimistä |
+| Saija | 27.11. | 1 | Yksikkötestit users.py-tiedostolle, pylint ja koodin siistimistä |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |

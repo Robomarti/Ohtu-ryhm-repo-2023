@@ -1,6 +1,7 @@
+from flask import render_template, request, redirect, session
+
 from src.app import app
 import src.AppLibrary as applibrary
-from flask import render_template, request, redirect, session
 from src import sources, users
 
 @app.route("/")
@@ -31,6 +32,7 @@ def choose_source():
         if source_type =='book':
             return render_template("add_book.html")
         return render_template("add_inproceedings.html")
+    return redirect("/")
 
 @app.route("/add_reference", methods=["POST"])
 def add_reference():
@@ -95,6 +97,7 @@ def login():
             # users.py sets session["user_id"]
             return redirect("/")
         return redirect("/login")
+    return redirect("/")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -110,6 +113,7 @@ def register():
         if users.register(username, password):
             return redirect("/")
         return redirect("/register")
+    return redirect("/")
 
 @app.route("/logout")
 def logout():
