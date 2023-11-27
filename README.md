@@ -12,3 +12,6 @@ Link to the webpage https://ohtu-ryhmatyo.onrender.com/
 
 ## Coverage report:
 ![Coverage-report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/coverage.png)
+
+## Burndown Graph:
+![Coverage-report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/burndown_graph.png)
