@@ -6,17 +6,8 @@ from os import getenv, environ
 
 # Testausta varten
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 def setup_db():
     if environ.get("FLASK_ENV") == "test":
-=======
-    def create_tables(self):
->>>>>>> 657bb7fa6e646b3d974c52068e7db2a385c9598f
-=======
-def setup_db():
-    if environ.get("FLASK_ENV") == "test":
->>>>>>> 966216d89823935025b25ab2933b13a0029440c3
 
         # Remove tables if they already exist
         try:
@@ -80,15 +71,7 @@ def setup_db():
             db.session.execute(sql)
             db.session.commit()
         except Exception as exception:
-<<<<<<< HEAD
-<<<<<<< HEAD
                 print("AppLibrary.py -> create_tables : Exception: ", exception)
-=======
-            print("AppLibrary.py -> create_tables : Exception: ", exception)
->>>>>>> 657bb7fa6e646b3d974c52068e7db2a385c9598f
-=======
-                print("AppLibrary.py -> create_tables : Exception: ", exception)
->>>>>>> 966216d89823935025b25ab2933b13a0029440c3
 
         # Initialise test database for articles:
         try:
