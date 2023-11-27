@@ -23,9 +23,7 @@ def add_article(article_author: str, # pylint: disable=too-many-arguments
                     article_year,
                     article_volume,
                     article_number,
-                    article_pages
-
-                ) 
+                    article_pages) 
                 VALUES (
                     :user_id,
                     :article_author, 
@@ -50,7 +48,9 @@ def add_article(article_author: str, # pylint: disable=too-many-arguments
                     }
                 )
         db.session.commit()
-    except Exception as exception:
+# we disable this for now since we don't yet know what kind of
+    # exceptions we should expect
+    except Exception as exception: # pylint: disable=broad-exception-caught
         print("sources.py -> add_article: " , exception)
         return False
 
