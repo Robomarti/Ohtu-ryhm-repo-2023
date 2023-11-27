@@ -17,11 +17,20 @@
 | Santtu | 20.11.  | 3 | Robotframework testi referencin lisäykselle |
 | Roberto | 21.11. | 2,5 | Sprintin suunnittelua, tietokantahakujen päivitystä ja refaktorointia. |
 | Roberto | 24.11. | 1 | Muokkasin koodia siten, että sovellus toimii verkossa paremmin. Paransin Pylint-scorea. |
+| Santtu | 21.11. | 0,5 | Github Actionsin ja pylintin setuppailua. |
+| Santtu | 24.11. | 2 | Github Actions setuppailua ja Robot testejen tekoa. |
+| Santtu | 25.11. | 2 | Sain Github Actionsin näyttämään pytestit, pylint scoren sekä robot testit.Myös Robot testejen tekoa. |
+| Santtu | 26.11. | 0,5 | Korvasin lähteen lisäyksen testin kolmella uudella testillä. |
+| Santtu | 27.11. | 1,5 | Robot testejen korjaamista. |
+| Arttu | 21.11.  | 3 | Kirjautuminen ja rekisteröinti |
+| Arttu | 22.11.  | 0,5 | Kirjautumisen ja rekisteröinnin viimeistely |
+| Arttu | 25.11.  | 1 | Eri lähdetyyppien routet |
+| Arttu | 20.11.  | 1,5 | Lähteiden poistaminen |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
-| Arttu | 6 |  |  |  |
+| Arttu | 6 | 6 |  |  |
 | Roberto  | 8.5 |  |  |  |
 | Saija | 6 |  |  |  |
 | Sanni | 6 |  |  |  |
