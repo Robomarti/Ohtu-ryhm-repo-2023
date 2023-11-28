@@ -5,6 +5,9 @@
 Link to the backlog: https://github.com/users/Robomarti/projects/1/views/1
 
 
+Link to the CI: https://github.com/Robomarti/Ohtu-ryhm-repo-2023/actions/workflows/main.yml
+
+
 Definition of done: https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/dod.md
 
 
