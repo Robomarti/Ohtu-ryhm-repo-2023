@@ -4,7 +4,9 @@
 
 <form action="/register" method="POST">
     <h1> Register: </h1>
-
+    {% if session.get("register_error") %}
+        {{ session["register_error"] }}
+    {% endif %}
     <p>Username:<br>
     <input class="userform" maxlength="20" minlength="3" type="text" name="username" required></p>
 

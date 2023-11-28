@@ -86,6 +86,8 @@ def delete_inproceedings(ref_id):
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
+        if session.get("register_error"):
+            session.pop("register_error")
         if session.get("user_id"):
             return redirect("/")
         return render_template("login.html")
@@ -112,7 +114,9 @@ def register():
         password = request.form["password"]
         if users.register(username, password):
             return redirect("/")
+        session["register_error"] = "Username taken or invalid password"
         return redirect("/register")
+    session.pop("register_error")
     return redirect("/")
 
 @app.route("/logout")
