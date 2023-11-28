@@ -11,6 +11,11 @@ def register(username, password):
     hash_value = generate_password_hash(password)
 
     try:
+        username_exists = text("""SELECT user_name FROM users WHERE user_name=:user_name""")
+        user = db.session.execute(username_exists, {"user_name": username}).fetchone()
+        if user:
+            return False
+
         sql = text("""INSERT INTO users (
                         user_name, 
                         password_hash)
