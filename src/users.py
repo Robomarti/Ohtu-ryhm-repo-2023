@@ -3,7 +3,27 @@
 from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.sql import text
+from string import punctuation, ascii_uppercase
+
 from src.db import db
+
+def password_check(password):
+    at_least_one_cap = False
+    at_least_one_special_character = False
+    at_least_one_number = False
+
+    if len(password) < 12:
+        return False
+
+    for character in password:
+        if character in ascii_uppercase:
+            at_least_one_cap = True
+        if character in punctuation:
+            at_least_one_special_character = True
+        if character in "1234567890":
+            at_least_one_number = True
+
+    return at_least_one_cap and at_least_one_special_character and at_least_one_number
 
 def register(username, password):
     """Creates a new account for a user"""
@@ -13,7 +33,7 @@ def register(username, password):
     try:
         username_exists = text("""SELECT user_name FROM users WHERE user_name=:user_name""")
         user = db.session.execute(username_exists, {"user_name": username}).fetchone()
-        if user:
+        if user or not password_check(password):
             return False
 
         sql = text("""INSERT INTO users (
