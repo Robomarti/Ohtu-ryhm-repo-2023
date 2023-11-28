@@ -23,7 +23,11 @@
         {{ article.article_number }}<br>
         Pages:
         {{ article.article_pages }}<br>
-        <a href="/delete_article/{{ article.id }}">delete</a><br>
+        <form method="post" action="/delete_article/{{ article.id }}">
+            <button type="submit">
+                delete
+            </button>
+        </form>
         <p>
     {% endfor %}
 
@@ -40,7 +44,11 @@
         {{ book.book_address }}<br>
         Year:
         {{ book.book_year }}<br>
-        <a href="/delete_book/{{ book.id }}">delete</a><br>
+        <form method="post" action="/delete_article/{{ article.id }}">
+            <button type="submit">
+                delete
+            </button>
+        </form>
         <p>
     {% endfor %}
 
@@ -63,7 +71,11 @@
         {{ inproceeding.inproceedings_publisher }}<br>
         Address:
         {{ inproceeding.inproceedings_address }}<br>
-        <a href="/delete_inproceeding/{{ inproceeding.id }}">delete</a><br>
+        <form method="post" action="/delete_article/{{ article.id }}">
+            <button type="submit">
+                delete
+            </button>
+        </form>
         <p>
     {% endfor %}
 </body>
