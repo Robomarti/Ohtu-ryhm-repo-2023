@@ -44,7 +44,7 @@
         {{ book.book_address }}<br>
         Year:
         {{ book.book_year }}<br>
-        <form method="post" action="/delete_article/{{ article.id }}">
+        <form method="post" action="/delete_book/{{ book.id }}">
             <button type="submit">
                 delete
             </button>
@@ -71,7 +71,7 @@
         {{ inproceeding.inproceedings_publisher }}<br>
         Address:
         {{ inproceeding.inproceedings_address }}<br>
-        <form method="post" action="/delete_article/{{ article.id }}">
+        <form method="post" action="/delete_inproceeding/{{ inproceeding.id }}">
             <button type="submit">
                 delete
             </button>

@@ -68,17 +68,17 @@ def add_reference():
             )
     return redirect("/")
 
-@app.route("/delete_article/<ref_id>")
+@app.route("/delete_article/<ref_id>", methods=["POST"])
 def delete_article(ref_id):
     sources.delete_source("articles", ref_id)
     return redirect("/")
 
-@app.route("/delete_book/<ref_id>")
+@app.route("/delete_book/<ref_id>", methods=["POST"])
 def delete_book(ref_id):
     sources.delete_source("books", ref_id)
     return redirect("/")
 
-@app.route("/delete_inproceeding/<ref_id>")
+@app.route("/delete_inproceeding/<ref_id>", methods=["POST"])
 def delete_inproceedings(ref_id):
     sources.delete_source("inproceedings", ref_id)
     return redirect("/")
