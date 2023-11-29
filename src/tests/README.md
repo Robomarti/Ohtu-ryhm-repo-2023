@@ -1,4 +1,4 @@
-Run Robotframework tests in root with run_robot_tests.sh.
+Run Robotframework tests in root with bash run_robot_tests.sh.
 
 Santtu: Weird bug when running robot tests; (Only without --headless, so works fine now) chrome starts running in background and eats up the CPU,
 if I run the tests multiple times this becomes more severe and locks up my PC. Fixed by killing the chrome task in task manager,
