@@ -2,6 +2,8 @@ import sources
 
 def return_all_articles():
     articles = sources.get_all_articles()
+    if articles is False:
+        return []
     bibtex_articles = []
 
     for article in articles:
@@ -20,6 +22,8 @@ def return_all_articles():
 
 def return_all_books():
     books = sources.get_all_books()
+    if books is False:
+        return []
     bibtex_books = []
 
     for book in books:
@@ -36,6 +40,8 @@ def return_all_books():
 
 def return_all_inproceedings():
     inproceedings = sources.get_all_inproceedings()
+    if inproceedings is False:
+        return []
     bibtex_inproceedings = []
 
     for inproceeding in inproceedings:
@@ -52,3 +58,5 @@ def return_all_inproceedings():
         bibtex_inproceedings.append(bibtex_inproceeding)
 
     return bibtex_inproceedings
+
+print(return_all_articles())
