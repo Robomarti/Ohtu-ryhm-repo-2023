@@ -1,21 +1,93 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <h1>Sources in BibTeX form</h1>
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content" id="articles">
+    <h1>References in BibTeX form</h1>
+
+    <form action="/view_sources" method="POST">
+        <label for="view_format">Show references in format:</label>
+        <br>
+        <input type="radio" name="view_format" value="text_view"> text
+        <input type="radio" name="view_format" value="bibtex_view" checked> BibTeX
+        <button type="submit" class="visible-button">Change</button>
+    </form>
 
     <h2>Articles</h2>
+
+    {% if bibtex_articles is none %}
+    <p>Error retrieving data from the database.</p>
+    {% elif not bibtex_articles %}
+    <p>You don't have any saved articles.</p>
+    {% else %}
+
+    
     {% for bibtex_article in bibtex_articles %}
-        {{ bibtex_article }}<br>
-    {% endfor %}
+    <div class="box">
+        <div class="source">
+        {{ bibtex_article[0]}}<br>
+        </div>
 
+        <div class="buttons">
+            <form method="post" action="/delete_article/{{ bibtex_article[1] }}">
+                <button type="submit" class="disappearing-button">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+
+<div class="content" id="books">
     <h2>Books</h2>
-    {% for bibtex_book in bibtex_books %}
-        {{ bibtex_book }}<br>
-    {% endfor %}
+    {% if bibtex_books is none %}
+    <p>Error retrieving data from the database.</p>
+    {% elif not bibtex_books %}
+    <p>You don't have any saved books.</p>
+    {% else %}
 
-    <h2>Inproceedings</h2>
-    {% for bibtex_inproceeding in bibtex_inproceedings %}
-        {{ bibtex_inproceeding }}<br>
+    {% for bibtex_book in bibtex_books %}
+    <div class="box">
+        <div class="source">
+        {{ bibtex_book[0] }}<br>
+        </div>
+
+        <div class="buttons">
+            <form method="post" action="/delete_book/{{ bibtex_book[1] }}">
+                <button type="submit" class="disappearing-button">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
     {% endfor %}
-</body>
-</html>
+    {% endif %}
+</div>
+
+<div class="content" id="inproceedings">
+    <h2>Inproceedings</h2>
+    {% if bibtex_inproceedings is none %}
+    <p>Error retrieving data from the database.</p>
+    {% elif not bibtex_inproceedings %}
+    <p>You don't have any saved inproceedings.</p>
+    {% else %}
+
+    {% for bibtex_inproceeding in bibtex_inproceedings %}
+    <div class="box">
+        <div class="source">
+        {{ bibtex_inproceeding[0] }}<br>
+        </div>
+        <div class="buttons">
+        <form method="post" action="/delete_inproceeding/{{ bibtex_inproceeding[1]}}">
+            <button type="submit" class="disappearing-button">
+                Delete
+            </button>
+        </form>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, session
 
 from src.app import app
 import src.AppLibrary as applibrary
-from src import sources, users
+from src import sources, users, bib
 
 @app.route("/")
 def index():
@@ -17,6 +17,22 @@ def index():
             inproceedings=inproceedings
             )
     return redirect('/login')
+
+@app.route("/view_sources", methods=["POST"])
+def view_sources():
+    if request.method == "POST":
+        if session.get("user_id"):
+            view_format = request.form.get('view_format')
+            if view_format =='bibtex_view':
+                bibtex_articles = bib.return_all_articles()
+                bibtex_books = bib.return_all_books()
+                bibtex_inproceedings = bib.return_all_inproceedings()
+                return render_template("bibtex.html",
+                                       bibtex_articles=bibtex_articles,
+                                        bibtex_books=bibtex_books,
+                                        bibtex_inproceedings=bibtex_inproceedings)
+    return redirect("/")
+
 
 @app.route("/choose_source_type", methods=["GET", "POST"])
 def choose_source():
@@ -33,6 +49,7 @@ def choose_source():
             return render_template("add_book.html")
         return render_template("add_inproceedings.html")
     return redirect("/")
+
 
 @app.route("/add_article")
 def add_article():

@@ -4,6 +4,14 @@
 <div class="content" id="articles">
     <h1>References</h1>
 
+    <form action="/view_sources" method="POST">
+        <label for="view_format">Show references in format:</label>
+        <br>
+        <input type="radio" name="view_format" value="text_view" checked> text
+        <input type="radio" name="view_format" value="bibtex_view"> BibTeX
+        <button type="submit" class="visible-button">Change</button>
+    </form>
+
     <h2>Articles</h2>
     {% if articles is none %}
     <p>Error retrieving data from the database.</p>
