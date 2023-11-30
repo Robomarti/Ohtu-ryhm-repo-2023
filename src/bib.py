@@ -59,4 +59,3 @@ def return_all_inproceedings():
 
     return bibtex_inproceedings
 
-print(return_all_articles())
