@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Sources in BibTeX form</h1>
+
+    <h2>Articles</h2>
+    {% for bibtex_article in bibtex_articles %}
+        {{ bibtex_article }}<br>
+    {% endfor %}
+
+    <h2>Books</h2>
+    {% for bibtex_book in bibtex_books %}
+        {{ bibtex_book }}<br>
+    {% endfor %}
+
+    <h2>Inproceedings</h2>
+    {% for bibtex_inproceeding in bibtex_inproceedings %}
+        {{ bibtex_inproceeding }}<br>
+    {% endfor %}
+</body>
+</html>
