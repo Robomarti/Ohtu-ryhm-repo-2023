@@ -51,7 +51,7 @@ class UsersTestCase(unittest.TestCase):
     def test_register(self):
         with app.test_request_context():
 
-            result = users.register("Test User 1", "TestPassword123")
+            result = users.register("Test User 1", "TestPassword123!")
             self.assertEqual(result, True)
 
             sql = text("SELECT * FROM users;")
@@ -65,24 +65,24 @@ class UsersTestCase(unittest.TestCase):
     def test_login(self):
         with app.test_request_context():
 
-            result = users.register("Test User 1", "TestPassword123")
+            result = users.register("Test User 1", "TestPassword123!")
             self.assertEqual(result, True)
 
             session.clear()
 
-            result = users.login("Test User 1", "TestPassword123")
+            result = users.login("Test User 1", "TestPassword123!")
             self.assertEqual(result, True)
             self.assertEqual(session["user_id"], 1)
 
     def test_login_with_wrong_password(self):
         with app.test_request_context():
 
-            result = users.register("Test User 1", "TestPassword123")
+            result = users.register("Test User 1", "TestPassword123!")
             self.assertEqual(result, True)
 
             session.clear()
 
-            result = users.login("Test User 1", "TestPassword124")
+            result = users.login("Test User 1", "TestPassword124!")
             self.assertEqual(result, False)
             self.assertEqual(session.get("user_id"), None)
 
@@ -90,7 +90,7 @@ class UsersTestCase(unittest.TestCase):
     def test_logout(self):
         with app.test_request_context():
 
-            users.register("Test User 1", "TestPassword123")
+            users.register("Test User 1", "TestPassword123!")
             users.logout()
 
             self.assertEqual(session.get("user_id"), None)
