@@ -58,3 +58,5 @@ def return_all_inproceedings():
         bibtex_inproceedings.append((bibtex_inproceeding, inproceeding.id))
 
     return bibtex_inproceedings
+
+print(return_all_articles())
