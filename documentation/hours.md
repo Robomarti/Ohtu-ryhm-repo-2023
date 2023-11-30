@@ -39,6 +39,11 @@
 | Roberto | 27.11. | 3 | Paransin Pylint-pisteitä ja integroin projektia verkkosivupalvelinta varten sopivammaksi. Aloitin burndown-kaavion laatimista. |
 | Saija | 27.11. | 1 | Yksikkötestit users.py-tiedostolle, pylint ja koodin siistimistä |
 
+## Sprint 3
+| Kuka | päivä | aika | mitä tein  |
+| :-----| :----:|:-----| :-----|
+| Roberto | 30.11. | 0.2 | Paransin backlogia purkamalla user storyjä taskeiksi. Kävin läpi mitä muut ovat saaneet aikaan. |
+
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
