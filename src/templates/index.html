@@ -1,39 +1,61 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content" id="articles">
     <h1>References</h1>
-    <a href="/choose_source_type">Add new reference</a>
-    <br>
-    <a href="/logout">Log out</a>
 
     <h2>Articles</h2>
+    {% if articles is none %}
+    <p>Error retrieving data from the database.</p>
+    {% elif not articles %}
+    <p>You don't have any saved articles.</p>
+    {% else %}
 
     {% for article in articles %}
-        Author:
-        {{ article.article_author }}<br>
-        Title:
-        {{ article.article_title }}<br>
-        Journal:
-        {{ article.article_journal }}<br>
-        Year:
-        {{ article.article_year }}<br>
-        Volume:
-        {{ article.article_volume }}<br>
-        Number:
-        {{ article.article_number }}<br>
-        Pages:
-        {{ article.article_pages }}<br>
-        <form method="post" action="/delete_article/{{ article.id }}">
-            <button type="submit">
-                delete
-            </button>
-        </form>
-        <p>
-    {% endfor %}
+        
+    <div class="box">
+        <div class="source">
+            Author:
+            {{ article.article_author }}<br>
+            Title:
+            {{ article.article_title }}<br>
+            Journal:
+            {{ article.article_journal }}<br>
+            Year:
+            {{ article.article_year }}<br>
+            Volume:
+            {{ article.article_volume }}<br>
+            Number:
+            {{ article.article_number }}<br>
+            Pages:
+            {{ article.article_pages }}<br>
+        </div>
 
+        <div class="buttons">
+            <form method="post" action="/delete_article/{{ article.id }}">
+                <button type="submit" class="disappearing-button">
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+
+
+
+<div class="content" id="books">
     <h2>Books</h2>
+    {% if books is none %}
+    <p>Error retrieving data from the database.</p>
+    {% elif not books %}
+    <p>You don't have any saved books.</p>
+    {% else %}
 
     {% for book in books %}
+    <div class="box">
+        <div class="source">
         Author:
         {{ book.book_author }}<br>
         Title:
@@ -44,17 +66,35 @@
         {{ book.book_address }}<br>
         Year:
         {{ book.book_year }}<br>
-        <form method="post" action="/delete_book/{{ book.id }}">
-            <button type="submit">
-                delete
-            </button>
-        </form>
-        <p>
+        </div>
+        <div class="buttons">
+            <form method="post" action="/delete_book/{{ book.id }}">
+                <button type="submit" class="disappearing-button">
+                    Delete
+                </button>
+            </form>
+            <form method="post" action=""> <!-- "/copy_book/{{ book.id }}"> -->
+                <button type="submit" class="disappearing-button">
+                    Copy text
+                </button>
+            </form>
+        </div>
+    </div>
     {% endfor %}
+    {% endif %}
+</div>
 
+<div class="content" id="inproceedings">
     <h2>Inproceedings</h2>
+    {% if inproceedings is none %}
+    <p>Error retrieving data from the database.</p>
+    {% elif not inproceedings %}
+    <p>You don't have any saved inproceedings.</p>
+    {% else %}
 
     {% for inproceeding in inproceedings %}
+    <div class="box">
+        <div class="source">
         Author:
         {{ inproceeding.inproceedings_author }}<br>
         Title:
@@ -71,12 +111,16 @@
         {{ inproceeding.inproceedings_publisher }}<br>
         Address:
         {{ inproceeding.inproceedings_address }}<br>
+        </div>
+        <div class="buttons">
         <form method="post" action="/delete_inproceeding/{{ inproceeding.id }}">
-            <button type="submit">
-                delete
+            <button type="submit" class="disappearing-button">
+                Delete
             </button>
         </form>
-        <p>
+        </div>
+    </div>
     {% endfor %}
-</body>
-</html>
+    {% endif %}
+</div>
+{% endblock %}

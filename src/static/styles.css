@@ -1,0 +1,193 @@
+body {
+    background-color: #1a1914;
+    font-family: 'Libre Caslon Text' serif; /*'Glass Antiqua' 'Zen Loop' 'Libre Caslon Display', 'Cinzel Decorative'*/
+    /*font-size: 1.2em;*/
+    text-decoration: none;
+    color: #dbdbdb;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #c08e44;
+    padding: 10px;
+    font-family: 'Libre Caslon Display', sans-serif;
+    color: rgb(34, 18, 18);
+    font-size: 1.2em;
+    z-index: 99;
+    transition: top 0.3s;
+}
+
+.navbar h1 {
+    font-family: 'Cinzel Decorative', sans-serif;
+    text-align: center;
+    color: #251111; 
+}
+
+.navbar-links {
+    display: flex;
+    gap: 18px;
+}
+
+
+.navbar a {
+    color: rgb(34, 18, 18);
+    font-family: 'Libre Caslon Display', sans-serif;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #e4ddba; 
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.navbar-right span {
+    margin-right: 5px;
+}
+.dropdown {
+
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#c08e44;
+    min-width: 80px;
+    z-index: 100;
+    padding: 2px;
+    font-size: 1em;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: block;
+    justify-content: space-between;
+  }
+
+.content-container h1 {
+    font-family: 'Cinzel Decorative', sans-serif; 
+    font-size: 1.8em; 
+    color: #fff; 
+}
+.content-container h2 {
+    font-family: 'Libre Caslon Display', sans-serif;
+    font-size: 1.8em; 
+    color: #fff; 
+}
+
+.register-link{
+    color: #fff;
+    text-decoration: underline; 
+}
+.register-link:hover {
+    color: #c08e44;
+    text-decoration: underline;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(18, 18, 18, 0.9); 
+    padding: 5%
+}
+
+
+.box {
+    position: relative;
+    margin: 0;
+    padding: 10px 30px 5px 30px;
+    color: #dbdbdb;
+    z-index: 80;
+}
+
+.box:hover {
+    background-color: rgba(18, 18, 18, 0.9);
+    border: 5px double rgb(58, 32, 49);
+    padding: 5px 25px 0 25px;
+    margin: 0;
+}
+
+
+.box:hover button {
+    display: inline;
+}
+
+.buttons {
+    display: flex;
+    min-height: 45px;
+}
+
+button {
+    display: none;
+    padding: 5px 10px 5px 10px ;
+    background-color: #c08e44; /*834c28*/
+    color: #1b1a1a;
+    border: none;
+    cursor: pointer;
+    margin: 10px 10px 0 10px;
+    font-family: 'Libre Caslon Display', serif; /* 'Glass Antiqua' 'Zen Loop'*/
+    font-weight: bold;
+    text-decoration: none;
+}
+.disappearing-button {
+    display: none;
+}
+.visible-button {
+    display: inline;
+}
+
+button:hover {
+    background-color: rgb(85, 35, 87);
+    color: #dbdbdb;
+    cursor: pointer;
+}
+
+
+  
+.textfield-form label {
+    display: inline-block;
+    width: 150px;
+    margin-top: 15px;
+}
+
+.textfield-form textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+}
+
+.textfield-form input {
+    margin: 3px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}

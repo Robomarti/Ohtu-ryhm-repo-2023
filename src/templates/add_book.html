@@ -1,22 +1,34 @@
-<form action="/add_reference" method="POST">
-    <h1>Add book</h1>
-    Author
-    <input type="text" name="author">
-    <br>
-    Title
-    <input type="text" name="title">
-    <br>
-    Publisher
-    <input type="text" name="publisher">
-    <br>
-    Address
-    <input type="text" name="address">
-    <br>
-    Year
-    <input type="number" name="year">
-    <br>
-    <input type="hidden" name="source_type" value="book">
-    <button type="submit">
-        Add
-    </button>
-</form>
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="content">
+        <div>
+      <form action="/add_reference" method="POST" class="textfield-form">
+        <h1>Add book</h1>
+    
+        <label for="author">Author:</label>
+        <textarea id="author" name="author" rows="4"></textarea>
+    
+        <label for="title">Title:</label>
+        <textarea id="title" name="title" rows="4"></textarea>
+    
+        <label for="publisher">Publisher:</label>
+        <textarea id="publisher" name="publisher" rows="4"></textarea>
+    
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+    
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year">
+    </div>
+    <div class = "buttons">
+        <input type="hidden" name="source_type" value="book">
+        <button type="submit" class="visible-button">Add</button>
+    </div>
+    </form>
+    {% if session.get("register_error") %}
+    {{ session["register_error"] }}
+    {% endif %}
+    </div>
+    
+{% endblock %}

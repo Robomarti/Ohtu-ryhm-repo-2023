@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
+{% block content %}
 
-<body>
+<div class="content">
 
 <form action="/login" method="POST">
-<h1>Login</h1>
+<h2>Login...</h2>
 
     <p>Username:<br>
     <input class="userform" type="text" name="username" rows="1" required></input></p>
 
     <p>Password:<br>
     <input class="userform" type="password" name="password" rows="1" required></input><br>
-    <input class="input" type="submit" value="Login">
+    <button type="submit" class="visible-button">Login</button>
 </form>
 
-<a href="/register" ><button>Create an account</button></a>
-<a href="/"><button>Home</button></a>
-</body>
-</html>
+<br>
+<h2>... or 
+<a href="/register" class="register-link">create a new account</a>
+!</h2>
+{% endblock %}

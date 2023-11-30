@@ -1,28 +1,42 @@
-<form action="/add_reference" method="POST">
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content">
     <h1>Add article</h1>
-    Author
-    <input type="text" name="author">
-    <br>
-    Title
-    <input type="text" name="title">
-    <br>
-    Journal
-    <input type="text" name="journal">
-    <br>
-    Year
-    <input type="number" name="year">
-    <br>
-    Volume
-    <input type="text" name="volume">
-    <br>
-    Number
-    <input type="text" name="number">
-    <br>
-    Pages
-    <input type="text" name="pages">
-    <br>
-    <input type="hidden" name="source_type" value="article">
-    <button type="submit">
-        Add
-    </button>
+
+    <div>
+    <form action="/add_reference" method="POST" class="textfield-form">
+
+        <label for="author">Author</label>
+        <textarea id="author" name="author" rows="4"></textarea>
+
+        <label for="title">Title</label>
+        <textarea id="title" name="title" rows="4"></textarea>
+
+        <label for="journal">Journal</label>
+        <textarea id="journal" name="journal" rows="4"></textarea>
+
+        <label for="year">Year</label>
+        <input type="number" name="year">
+
+        <label for="volume">Volume</label>
+        <input type="text" name="volume">
+
+        <label for="number">Number</label>
+        <input type="number" name="number">
+
+        <label for="pages">Pages</label>
+        <input type="text" name="pages">
+
+    </div>
+    <div class = "buttons">
+        <input type="hidden" name="source_type" value="article">
+        <button type="submit" class="visible-button">Add</button>
+    </div>
 </form>
+{% if session.get("register_error") %}
+{{ session["register_error"] }}
+{% endif %}
+</div>
+
+{% endblock %}

@@ -34,6 +34,24 @@ def choose_source():
         return render_template("add_inproceedings.html")
     return redirect("/")
 
+@app.route("/add_article")
+def add_article():
+    if session.get("user_id"):
+        return render_template("/add_article.html")
+    return redirect('/login')
+
+@app.route("/add_book")
+def add_book():
+    if session.get("user_id"):
+        return render_template("/add_book.html")
+    return redirect('/login')
+
+@app.route("/add_inproceedings")
+def add_inproceedings():
+    if session.get("user_id"):
+        return render_template("/add_inproceedings.html")
+    return redirect('/login')
+
 @app.route("/add_reference", methods=["POST"])
 def add_reference():
     if request.method == "POST":

@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content">
 
 <form action="/register" method="POST">
-    <h1> Register: </h1>
+    <h2> Create a new account: </h2>
     {% if session.get("register_error") %}
         {{ session["register_error"] }}
     {% endif %}
@@ -12,10 +13,9 @@
 
     <p>Password:<br>
     <input class="userform" maxlength="20" type="password" name="password" required><br>
-    <input class="input" type="submit" value="Register">
+    <button type="submit" class="visible-button">Register</button>
     </form>
 
-    <a href="/login" ><button>Login Page</button></a>
-    <a href="/"><button>Home</button></a>
-</body>
-</html>
+    <a href="/"><button class="visible-button">Home</button></a>
+
+    {% endblock %}

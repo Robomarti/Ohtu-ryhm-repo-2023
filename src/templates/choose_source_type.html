@@ -1,11 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content">
+<h1>Choose source type</h1>
 <form action="/choose_source_type" method="POST">
-    <h1>Choose source type</h1>
+
     <select name="source_type">
         <option value="article">Article</option>
         <option value="book">Book</option>
         <option value="inproceedings">Inproceedings</option>
     </select>
-    <button type="submit">
+    <button type="submit" class="visible-button">
         Select type
     </button>
 </form>
+</div>
+{% endblock %}

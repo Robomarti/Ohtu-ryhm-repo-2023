@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glass+Antiqua">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Loop">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display"> 
+</head>
+
+<body>
+
+    <div class="background">
+        <img src="/static/dana-ward-6JffLQi_XqY-unsplash.jpg" alt="Background image: Old books">
+    </div>
+    
+    <div class="navbar" class="navbar" id="navbar">
+        <a href="/"><h1>BibTeX Helper</h1></a>
+
+        {% if session.user_id %}
+        <div class="navbar-links">
+            <div class="dropdown">
+                <span><a href="/">References</a></span>
+                <div class="dropdown-content">
+                    <a href="/#articles">Articles</a>
+                    <br><a href="/#books">Books</a>
+                    <br><a href="/#inproceedings">Inproceedings</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <span><a href="/choose_source_type">Add New</a></span>
+                <div class="dropdown-content">
+                    <a href="/add_article">Article</a>
+                    <br><a href="/add_book">Book</a>
+                    <br><a href="/add_inproceedings">Inproceedings</a>
+                </div>
+            </div>
+
+            <a href="#">Download</a>
+            <a href="/logout">Logout</a>
+
+            <div class="navbar-right">
+            <span>View:</span>
+            <a href="#">Text</a>
+            <span> |</span>
+            <a href="#">BibTex</a>
+            </div>
+
+            </div>
+            {% endif %}
+        </div>
+      </div>
+
+    <div class="content-container">
+
+
+        {% block content %}{% endblock %}
+
+
+</div>
+
+<script>
+    let prevScrollPos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+
+    window.onscroll = function() {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else {
+        navbar.style.top = "-100px";
+      }
+      prevScrollPos = currentScrollPos;
+    };
+  </script>
+
+</body>
+</html>
