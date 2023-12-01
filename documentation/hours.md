@@ -44,6 +44,7 @@
 | :-----| :----:|:-----| :-----|
 | Roberto | 28.11. | 2 | Suunnittelin sprinttiä, refaktoroin tietokannan sekä lisäsin salasanan validoinnin. |
 | Roberto | 30.11. | 0.2 | Paransin backlogia purkamalla user storyjä taskeiksi. Kävin läpi mitä muut ovat saaneet aikaan. |
+| Roberto | 1.12. | 0.5 | Implementoin .bib tiedoston lataamisen. |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
