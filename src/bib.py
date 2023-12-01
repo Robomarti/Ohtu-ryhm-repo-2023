@@ -33,7 +33,7 @@ def return_all_books():
                       f"  publisher = \"{book.book_publisher}\",\n" \
                       f"  address = \"{book.book_address}\",\n" \
                       f"  year = {book.book_year}\n" \
-                      f"}}"
+                      f"}}\n"
         bibtex_books.append((bibtex_book, book.id))
 
     return bibtex_books
