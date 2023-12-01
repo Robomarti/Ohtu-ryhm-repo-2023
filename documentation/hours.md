@@ -42,6 +42,7 @@
 ## Sprint 3
 | Kuka | päivä | aika | mitä tein  |
 | :-----| :----:|:-----| :-----|
+| Roberto | 28.11. | 2 | Suunnittelin sprinttiä, refaktoroin tietokannan sekä lisäsin salasanan validoinnin. |
 | Roberto | 30.11. | 0.2 | Paransin backlogia purkamalla user storyjä taskeiksi. Kävin läpi mitä muut ovat saaneet aikaan. |
 
 ## Tunnit yhteensä
