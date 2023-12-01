@@ -3,13 +3,13 @@ from sqlalchemy.sql import text
 from flask import session
 
 # we need all of the arguments
-def add_article(article_author: str, # pylint: disable=too-many-arguments
-                article_title: str,
-                article_journal: str,
-                article_year: int,
-                article_volume: str,
-                article_number: int,
-                article_pages: str):
+def add_article(article_author, # pylint: disable=too-many-arguments
+                article_title,
+                article_journal,
+                article_year,
+                article_volume,
+                article_number,
+                article_pages):
 
     if session.get("user_id") is None:
         return False
@@ -37,13 +37,13 @@ def add_article(article_author: str, # pylint: disable=too-many-arguments
 
     try:
         db.session.execute(sql, {
-                    "user_id": user_id,
+                    "user_id": int(user_id),
                     "article_author": article_author,
                     "article_title": article_title,
                     "article_journal": article_journal,
-                    "article_year": str(article_year),
+                    "article_year": int(article_year),
                     "article_volume": article_volume,
-                    "article_number": str(article_number),
+                    "article_number": int(article_number),
                     "article_pages": article_pages
                     }
                 )
@@ -58,11 +58,11 @@ def add_article(article_author: str, # pylint: disable=too-many-arguments
 
     return True
 
-def add_book(book_author: str,
-             book_title: str,
-             book_publisher: str,
-             book_address: str,
-             book_year: int):
+def add_book(book_author,
+             book_title,
+             book_publisher,
+             book_address,
+             book_year):
 
     if session.get("user_id") is None:
         return False
@@ -88,12 +88,12 @@ def add_book(book_author: str,
 
     try:
         db.session.execute(sql, {
-                    "user_id": user_id,
+                    "user_id": int(user_id),
                     "book_author": book_author,
                     "book_title": book_title,
                     "book_publisher": book_publisher,
                     "book_address": book_address,
-                    "book_year": str(book_year)
+                    "book_year": int(book_year)
                     }
                 )
         db.session.commit()
@@ -105,14 +105,14 @@ def add_book(book_author: str,
     return True
 
 # pylint: disable=too-many-arguments
-def add_inproceedings(inproceedings_author: str,
-                      inproceedings_title: str,
-                      inproceedings_booktitle: str,
-                      inproceedings_series: str,
-                      inproceedings_year: int,
-                      inproceedings_pages: str,
-                      inproceedings_publisher: str,
-                      inproceedings_address: str):
+def add_inproceedings(inproceedings_author,
+                      inproceedings_title,
+                      inproceedings_booktitle,
+                      inproceedings_series,
+                      inproceedings_year,
+                      inproceedings_pages,
+                      inproceedings_publisher,
+                      inproceedings_address):
     if session.get("user_id") is None:
         return False
     user_id = session["user_id"]
@@ -143,12 +143,12 @@ def add_inproceedings(inproceedings_author: str,
 
     try:
         db.session.execute(sql, {
-                    "user_id": user_id,
+                    "user_id": int(user_id),
                     "inproceedings_author": inproceedings_author,
                     "inproceedings_title": inproceedings_title,
                     "inproceedings_booktitle": inproceedings_booktitle,
                     "inproceedings_series": inproceedings_series,
-                    "inproceedings_year": str(inproceedings_year),
+                    "inproceedings_year": int(inproceedings_year),
                     "inproceedings_pages": inproceedings_pages,
                     "inproceedings_publisher": inproceedings_publisher,
                     "inproceedings_address": inproceedings_address
