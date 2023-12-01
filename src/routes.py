@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, session
+from flask import render_template, request, redirect, session, send_file
 
 from src.app import app
 import src.AppLibrary as applibrary
@@ -165,3 +165,9 @@ def db_initialize():
     data = users.get_users()
     print(data)
     return "Database should now be initialized\n"
+
+@app.route("/download_references", methods=["GET", "POST"])
+def download_references():
+    bib.download_all()
+    path = "references.bib"
+    return send_file(path, as_attachment=True)

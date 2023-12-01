@@ -58,3 +58,13 @@ def return_all_inproceedings():
         bibtex_inproceedings.append((bibtex_inproceeding, inproceeding.id))
 
     return bibtex_inproceedings
+
+def download_all():
+    all_articles = return_all_articles()
+    all_books = return_all_books()
+    all_inproceedings = return_all_inproceedings()
+    reference_list = all_articles + all_books + all_inproceedings
+
+    with open("src\\references.bib", "w", encoding="utf-8") as downloadable_file:
+        for reference in reference_list:
+            downloadable_file.write(reference[0] + "\n")
