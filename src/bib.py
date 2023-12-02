@@ -33,7 +33,7 @@ def return_all_books():
                       f"  publisher = \"{book.book_publisher}\",\n" \
                       f"  address = \"{book.book_address}\",\n" \
                       f"  year = {book.book_year}\n" \
-                      f"}}"
+                      f"}}\n"
         bibtex_books.append((bibtex_book, book.id))
 
     return bibtex_books
@@ -59,3 +59,12 @@ def return_all_inproceedings():
 
     return bibtex_inproceedings
 
+def download_all():
+    all_articles = return_all_articles()
+    all_books = return_all_books()
+    all_inproceedings = return_all_inproceedings()
+    reference_list = all_articles + all_books + all_inproceedings
+
+    with open("src\\references.bib", "w", encoding="utf-8") as downloadable_file:
+        for reference in reference_list:
+            downloadable_file.write(reference[0] + "\n")

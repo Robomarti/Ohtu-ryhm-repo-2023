@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, session
+from flask import render_template, request, redirect, session, send_file, flash
 
 from src.app import app
 import src.AppLibrary as applibrary
@@ -121,8 +121,6 @@ def delete_inproceedings(ref_id):
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        if session.get("register_error"):
-            session.pop("register_error")
         if session.get("user_id"):
             return redirect("/")
         return render_template("login.html")
@@ -133,6 +131,7 @@ def login():
         if users.login(username, password):
             # users.py sets session["user_id"]
             return redirect("/")
+        flash("Invalid credentials.", "error")
         return redirect("/login")
     return redirect("/")
 
@@ -149,9 +148,13 @@ def register():
         password = request.form["password"]
         if users.register(username, password):
             return redirect("/")
-        session["register_error"] = "Username taken or invalid password"
+        flash("""
+              Username taken or invalid password.<br><br> 
+              Ensure password is at least: <br>- 12 characters long 
+              <br>- includes at least 1 special character, 
+              uppercase letter, and a number.
+              """, "error")
         return redirect("/register")
-    session.pop("register_error")
     return redirect("/")
 
 @app.route("/logout")
@@ -165,3 +168,9 @@ def db_initialize():
     data = users.get_users()
     print(data)
     return "Database should now be initialized\n"
+
+@app.route("/download_references", methods=["GET", "POST"])
+def download_references():
+    bib.download_all()
+    path = "references.bib"
+    return send_file(path, as_attachment=True)
