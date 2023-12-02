@@ -17,6 +17,7 @@ from sqlalchemy.sql import text
 from src.app import app  
 from src.db import db 
 import users
+import in_memory_db
 
 class UsersTestCase(unittest.TestCase):
     def setUp(self):
@@ -25,28 +26,14 @@ class UsersTestCase(unittest.TestCase):
 
         with app.test_request_context():
 
-            try: 
-                sql = text("""CREATE TABLE users (
-                                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                user_name TEXT,
-                                password_hash TEXT
-                            );""")
+            in_memory_db.setup_db()
 
-                db.session.execute(sql)
-                db.session.commit()
-            except Exception as exception:
-                print("users_test.py -> setUp: Exception: ", exception)
-            
 
     def tearDown(self):
-        try: 
-            sql = text("DROP TABLE users;")
-            result = db.session.execute(sql)
-            db.session.commit()
-            print("users_test / tearDown: result =", result)
-        except Exception as exception:
-            print("users_test.py -> tearDown: Exception: ", exception)
-            
+
+        in_memory_db.empty_db()
+
+
 
     def test_register(self):
         with app.test_request_context():
