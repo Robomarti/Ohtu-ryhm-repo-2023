@@ -4,8 +4,12 @@
 <div class="content">
 
 <form action="/login" method="POST">
-<h2>Login...</h2>
-
+    <h2>Login...</h2>
+    {% with message = get_flashed_messages() %}
+        {% if message %}
+            {{ message[0] }}
+        {% endif %}
+    {% endwith %}
     <p>Username:<br>
     <input class="userform" type="text" name="username" rows="1" required></input></p>
 

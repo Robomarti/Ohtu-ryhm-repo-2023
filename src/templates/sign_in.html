@@ -5,13 +5,15 @@
 
 <form action="/register" method="POST">
     <h2> Create a new account: </h2>
-    {% if session.get("register_error") %}
-        {{ session["register_error"] }}
-    {% endif %}
+    {% with message = get_flashed_messages() %}
+        {% if message %}
+            {{ message[0]|safe }}
+        {% endif %}
+    {% endwith %}
     <p>Username:<br>
     <input class="userform" maxlength="20" minlength="3" type="text" name="username" required></p>
 
-    <p>Password:<br>
+    <p>Password: <br>
     <input class="userform" maxlength="20" type="password" name="password" required><br>
     <button type="submit" class="visible-button">Register</button>
     </form>
