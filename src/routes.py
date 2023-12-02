@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, session, send_file, flash
 
 from src.app import app
-import src.AppLibrary as applibrary
+import src.tests.in_memory_db as test_db
 from src import sources, users, bib
 
 @app.route("/")
@@ -164,9 +164,7 @@ def logout():
 
 @app.route("/db_initialize")
 def db_initialize():
-    applibrary.setup_db()
-    data = users.get_users()
-    print(data)
+    test_db.setup_db()
     return "Database should now be initialized\n"
 
 @app.route("/download_references", methods=["GET", "POST"])

@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  ../AppLibrary.py
 
 *** Variables ***
 ${SERVER}  localhost:5000
@@ -8,7 +9,6 @@ ${HOME_URL}  http://${SERVER}
 ${CHOOSE_SOURCE_TYPE_URL}  http://${SERVER}/choose_source_type
 ${LOGIN_URL}  http://${SERVER}/login
 ${REGISTER_URL}  http://${SERVER}/register
-${DB_INITIALIZE_URL}  http://${SERVER}/db_initialize
 
 *** Keywords ***
 Open And Configure Browser And Initialize Database
@@ -18,9 +18,6 @@ Open And Configure Browser And Initialize Database
     Open Browser  browser=chrome  options=${options}
     Set Selenium Speed  ${DELAY}
     Initialize Database
-
-Initialize Database
-    Go To  ${DB_INITIALIZE_URL}
 
 Add Article Page Should Be Open
     Title Should Be  Add article
