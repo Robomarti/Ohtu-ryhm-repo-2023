@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.secret_key = getenv("SECRET_KEY")
 if not getenv("SECRET_KEY"):
     print('NO SECRET KEY SET :<<', file=sys.stderr)
+    import src.tests.robot.testing_routes
 else:
     print('All is working :>', file=sys.stderr)
 
