@@ -44,9 +44,11 @@
 | :-----| :----:|:-----| :-----|
 | Roberto | 28.11. | 2 | Suunnittelin sprinttiä, refaktoroin tietokannan sekä lisäsin salasanan validoinnin. |
 | Arttu | 28.11. | 3 | Sprintin suunnittelua, virheilmoitusten käsittelyä ja lähteen poisto routen korjaus. |
+| Sanni | 28.11. | 2.5 | Sprintin suunnittelu ja bibtex.html |
 | Roberto | 30.11. | 0.2 | Paransin backlogia purkamalla user storyjä taskeiksi. Kävin läpi mitä muut ovat saaneet aikaan. |
 | Roberto | 1.12. | 0.5 | Implementoin .bib tiedoston lataamisen. |
 | Arttu | 2.12. | 2 | Flask flashiin tutustuminen ja virheilmoitusten käsittely valmiiksi. |
+| Sanni | 2.12. | 3 | bib.py ja bib.py:lle yksikkötestit |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
