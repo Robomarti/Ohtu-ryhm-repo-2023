@@ -32,6 +32,12 @@ Add Article Page Should Be Open
 Choose Source Type Page Should Be Open
     Title Should Be  Choose source type
 
+Login Page Should Be Open
+    Page Should Contain  Login...
+
+Register Page Should Be Open
+    Page Should Contain  Create a new account:
+
 Go To Home Page
     Go to  ${HOME_URL}
 
@@ -48,7 +54,7 @@ Should Be Logged In
     Go To Home Page
     Page Should Contain  References
 
-Article should be on Home Page
+Article Should Be On Home Page
     [Arguments]  ${author}  ${title}  ${journal}  ${year}  ${volume}  ${number}  ${pages}
     Go To Home Page
     Page Should Contain  ${author}
@@ -59,7 +65,7 @@ Article should be on Home Page
     Page Should Contain  ${number}
     Page Should Contain  ${pages}
 
-Book should be on Home Page
+Book Should Be On Home Page
     [Arguments]  ${author}  ${title}  ${publisher}  ${address}  ${year}
     Go To Home Page
     Page Should Contain  ${author}
@@ -68,7 +74,7 @@ Book should be on Home Page
     Page Should Contain  ${address}
     Page Should Contain  ${year}
 
-Inproceedings should be on Home Page
+Inproceedings Should Be On Home Page
     [Arguments]  ${author}  ${title}  ${booktitle}  ${series}  ${year}  ${pages}  ${publisher}  ${address}
     Go To Home Page
     Page Should Contain  ${author}

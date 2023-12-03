@@ -6,23 +6,33 @@ Suite Setup  Open And Configure Browser Initialize Database And Signin
 Suite Teardown  Close Browser
 
 *** Test Cases ***
+Deleting Articles Books And Inproceedings Works
+    Go To Home Page
+    Delete Reference And Check If Its Deleted  Writer 1
+    Delete Reference And Check If Its Deleted  Writer 2
+    Delete Reference And Check If Its Deleted  Tester 1
+    Delete Reference And Check If Its Deleted  Tester 2
+    Delete Reference And Check If Its Deleted  Author1
+    Delete Reference And Check If Its Deleted  Author2
+    Page Should Contain  You don't have any saved articles.
+
 Add Valid Article
     Open Choose Source Type Page And Input Type  article
     Set Article  Arno  Testi  Testimesta  2023  1  2  100
     Add Reference And Go To Home Page
-    Article should be on Home Page  Arno  Testi  Testimesta  2023  1  2  100
+    Article Should Be On Home Page  Arno  Testi  Testimesta  2023  1  2  100
 
 Add Valid Book
     Open Choose Source Type Page And Input Type  book
     Set Book  Kolli  Pesti  Testaajat  Jossain Tuolla  1995
     Add Reference And Go To Home Page
-    Book should be on Home Page  Kolli  Pesti  Testaajat  Jossain Tuolla  1995
+    Book Should Be On Home Page  Kolli  Pesti  Testaajat  Jossain Tuolla  1995
 
 Add Valid Inproceedings
     Open Choose Source Type Page And Input Type  inproceedings
     Set Inproceedings  Aku Ankka  Ankkalinnan Mestari  Epäonninen  Köyhät  2015  253  Roopen Posse  Ankkakatu 2
     Add Reference And Go To Home Page
-    Inproceedings should be on Home Page  Aku Ankka  Ankkalinnan Mestari  Epäonninen  Köyhät  2015  253  Roopen Posse  Ankkakatu 2
+    Inproceedings Should Be On Home Page  Aku Ankka  Ankkalinnan Mestari  Epäonninen  Köyhät  2015  253  Roopen Posse  Ankkakatu 2
 
 *** Keywords ***
 Add Reference And Go To Home Page
@@ -36,4 +46,10 @@ Open Choose Source Type Page And Input Type
 Open And Configure Browser Initialize Database And Signin
     Open And Configure Browser And Initialize Database
     Create Test Account And Login
-    
+
+Delete Reference And Check If Its Deleted
+    [Arguments]  ${locator}
+    Page Should Contain  ${locator}
+    Mouse Over  class:source
+    Click Button  Delete
+    Page Should Not Contain  ${locator}
