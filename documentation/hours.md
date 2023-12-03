@@ -50,6 +50,8 @@
 | Roberto | 1.12. | 0.5 | Implementoin .bib tiedoston lataamisen. |
 | Arttu | 2.12. | 2 | Flask flashiin tutustuminen ja virheilmoitusten käsittely valmiiksi. |
 | Sanni | 2.12. | 1.5 | bib.py:lle yksikkötestit |
+| Santtu | 2.12. | 1 | Korjasin ja refactoroin robot testejä |
+| Santtu | 3.12. | 2 | Lisäsin robot testit lähteiden poistolle ja epäonnistuville kirjautumisille sekä rekisteröitymisille |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
