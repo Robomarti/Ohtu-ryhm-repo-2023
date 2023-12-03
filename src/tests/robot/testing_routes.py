@@ -1,3 +1,4 @@
+from src.app import app
 import src.tests.in_memory_db as test_db
 
 @app.route("/db_initialize")
