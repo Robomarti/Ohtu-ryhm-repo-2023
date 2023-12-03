@@ -15,7 +15,7 @@ Submit Signin Credentials
 
 Logout
     Go To Home Page
-    Click Link  Log out
+    Click Link  Logout
 
 Signin As User
     [Arguments]  ${username}  ${password}

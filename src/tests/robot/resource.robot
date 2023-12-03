@@ -4,7 +4,7 @@ Library  AppLibrary.py
 
 *** Variables ***
 ${SERVER}  localhost:5000
-${DELAY}  0.025 seconds
+${DELAY}  0 seconds
 ${HOME_URL}  http://${SERVER}
 ${CHOOSE_SOURCE_TYPE_URL}  http://${SERVER}/choose_source_type
 ${LOGIN_URL}  http://${SERVER}/login
@@ -19,6 +19,13 @@ Open And Configure Browser And Initialize Database
     Set Selenium Speed  ${DELAY}
     Initialize Database
 
+Create Test Account And Login
+    Create User  Testihyyppä  Testaaja1lmar!
+    Go To Login Page
+    Input Text  username  Testihyyppä
+    Input Text  password  Testaaja1lmar!
+    Click Button  Login
+
 Add Article Page Should Be Open
     Title Should Be  Add article
 
@@ -29,8 +36,7 @@ Go To Home Page
     Go to  ${HOME_URL}
 
 Go To Choose Source Type Page
-    Go To Home Page
-    Click Link  Add new reference
+    Go to  ${CHOOSE_SOURCE_TYPE_URL}
 
 Go To Login Page
     Go To  ${LOGIN_URL}

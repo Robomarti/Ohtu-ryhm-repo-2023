@@ -7,14 +7,14 @@ Suite Teardown  Close Browser
 *** Test Cases ***
 Register User Succesfully And Logout
     Go To Signin Page
-    Set User Credentials  testi  robot
+    Set User Credentials  testi  Testaaja1lmar!
     Submit Signin Credentials
     Should Be Logged In
     Logout
 
 Loign Succesfully And Logout
     Go To Login Page
-    Set User Credentials  testi  robot
+    Set User Credentials  testi  Testaaja1lmar!
     Submit Login Credentials
     Should Be Logged In
     Logout

@@ -35,5 +35,5 @@ Open Choose Source Type Page And Input Type
 
 Open And Configure Browser Initialize Database And Signin
     Open And Configure Browser And Initialize Database
-    Signin As User  Referenssi  testaaja
+    Create Test Account And Login
     

@@ -8,3 +8,19 @@ class AppLibrary:
 
     def initialize_database(self):
         requests.get(f"{self._base_url}/db_initialize")
+
+    def create_user(self, username, password):
+        data = {
+            "username": username,
+            "password": password,
+        }
+
+        requests.post(f"{self._base_url}/register", data=data)
+
+    def login_as_tester(self, username, password):
+        data = {
+            "username": username,
+            "password": password,
+        }
+
+        requests.post(f"{self._base_url}/login", data=data)
