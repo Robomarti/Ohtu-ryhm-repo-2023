@@ -65,6 +65,6 @@ def download_all():
     all_inproceedings = return_all_inproceedings()
     reference_list = all_articles + all_books + all_inproceedings
 
-    with open("src\\references.bib", "w", encoding="utf-8") as downloadable_file:
+    with open("src/references.bib", "w", encoding="utf-8") as downloadable_file:
         for reference in reference_list:
             downloadable_file.write(reference[0] + "\n")
