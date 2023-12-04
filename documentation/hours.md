@@ -45,11 +45,15 @@
 | Roberto | 28.11. | 2 | Suunnittelin sprinttiä, refaktoroin tietokannan sekä lisäsin salasanan validoinnin. |
 | Arttu | 28.11. | 3 | Sprintin suunnittelua, virheilmoitusten käsittelyä ja lähteen poisto routen korjaus. |
 | Sanni | 28.11. | 2.5 | Sprintin suunnittelu ja bibtex.html |
+| Saija | 28.11. | 1 | Sprintin ja ulkoasun suunnittelua |
+| Saija | 29.11. | 3 | Ulkoasun toteutus index.html-sivulle, css- ja layout.html -tiedostojen luonti |
 | Roberto | 30.11. | 0.2 | Paransin backlogia purkamalla user storyjä taskeiksi. Kävin läpi mitä muut ovat saaneet aikaan. |
 | Sanni | 30.11. | 1.5 | bib.py luotu |
+| Saija | 30.11. | 2 | Lomakkeiden ulkoasu, yksikkötestien korjaus hakemistorakenteen muutoksen jäljiltä, bibtex.html:n muokkaus uuteen layouttiin |
 | Roberto | 1.12. | 0.5 | Implementoin .bib tiedoston lataamisen. |
 | Arttu | 2.12. | 2 | Flask flashiin tutustuminen ja virheilmoitusten käsittely valmiiksi. |
 | Sanni | 2.12. | 1.5 | bib.py:lle yksikkötestit |
+| Saija | 2.12. | 0,5 | Testitietokannan alustuksen siirtäminen erilliseen tiedostoon |
 | Santtu | 2.12. | 1 | Korjasin ja refactoroin robot testejä |
 | Santtu | 3.12. | 2 | Robot testit lähteiden poistolle, epäonnistuville kirjautumisille ja rekisteröitymisille. Muutin tiedostorakennetta ja refaktoroin. |
 | Roberto | 4.12. | 3.3 | Korjasin path name:eihin liittyvän ongelman ja tein retrospektiivin muistiinpanot retro.md tiedostoon. |
@@ -60,7 +64,7 @@
 | :-----| :----:|:----:|:----:|:----:|
 | Arttu | 6 | 6 |  |  |
 | Roberto  | 6 | 6,5 | 6 |  |
-| Saija | 6 | 6,5 |  |  |
+| Saija | 6 | 6,5 | 6,5 |  |
 | Sanni | 6 | 6 |  |  |
 | Santtu | 6 | 6,5 |  |  |
-| yht. | 30 | 31,5 | 6 |  |
+| yht. | 30 | 31,5 | 12,5 |  |
