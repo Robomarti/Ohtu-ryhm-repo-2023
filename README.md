@@ -15,7 +15,7 @@ Definition of done: https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/d
 Link to the webpage https://ohtu-ryhmatyo.onrender.com/
 
 ## Retrospektive
-![Sprint 2 retrospektive](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/retro.md)
+[Sprint 2 retrospektive](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/retro.md)
 
 ## Coverage report:
 ![Coverage-report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/coverage.png)
