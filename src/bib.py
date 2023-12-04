@@ -1,3 +1,5 @@
+from sys import platform
+
 from src import sources
 
 def return_all_articles():
@@ -65,6 +67,15 @@ def download_all():
     all_inproceedings = return_all_inproceedings()
     reference_list = all_articles + all_books + all_inproceedings
 
-    with open("src/references.bib", "w", encoding="utf-8") as downloadable_file:
+    # The server uses linux but some of us use windows, so we
+    # have to change the pathname accordingly.
+    file_path_name = ""
+    if platform == "win32":
+        file_path_name = "src\\references.bib"
+    else:
+        # at the moment we won't care about other operating systems.
+        file_path_name = "src/references.bib"
+
+    with open(file_path_name, "w", encoding="utf-8") as downloadable_file:
         for reference in reference_list:
             downloadable_file.write(reference[0] + "\n")
