@@ -37,7 +37,7 @@ Register Unsuccesfully With Password That Has No Numbers
     Register As  TesterMaster  Testaajailmar!
     Wont Allow Registering And Register Page Contains Error Message
 
-Register Unsuccesfully With Password That Has Special Characters
+Register Unsuccesfully With Password That Has No Special Characters
     Register As  TesterMaster  Testaaja1lmari
     Wont Allow Registering And Register Page Contains Error Message
 

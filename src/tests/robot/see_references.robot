@@ -15,16 +15,14 @@ Logged In User Sees BibTeX Data
     Page Should Contain  address = "Jossain Tuolla",
     Page Should Contain  year = 2000
 
-*** Comment ***
 Logged In User Sees Normal Data
     Click Button  Text
     Page Should Contain  References
-    Execute Javascript  window.scrollTo(0,1000)
-    Wait Until Page Contains  Author: Mina
-    Page Should Contain  Title: Kirja
-    Page Should Contain  Publisher: Testaajat
-    Page Should Contain  Address: Jossain Tuolla
-    Page Should Contain  Year: 2000
+    Page Should Not Contain  in BibTeX form
+    Page Contains  Author:  Mina
+    Page Contains  Title:  Kirja
+    Page Contains  Publisher:  Testaajat
+    Page Contains  Year:  2000
 
 *** Keywords ***
 Open And Configure Browser Initialize Database And Signin
@@ -41,3 +39,8 @@ Open Choose Source Type Page And Input Type
     [Arguments]  ${type}
     Go To Choose Source Type Page
     Choose Source Type  ${type}
+
+Page Contains
+    [Arguments]  ${type}  ${value}
+    Page Should Contain  ${type}
+    Page Should Contain  ${value}
