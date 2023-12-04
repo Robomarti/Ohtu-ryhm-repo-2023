@@ -52,14 +52,14 @@
 | Sanni | 2.12. | 1.5 | bib.py:lle yksikkötestit |
 | Santtu | 2.12. | 1 | Korjasin ja refactoroin robot testejä |
 | Santtu | 3.12. | 2 | Robot testit lähteiden poistolle, epäonnistuville kirjautumisille ja rekisteröitymisille. Muutin tiedostorakennetta ja refaktoroin. |
-| Roberto | 4.12. | 2.3 | Korjasin path name:eihin liittyvän ongelman ja tein retrospektiivin muistiinpanot retro.md tiedostoon. |
+| Roberto | 4.12. | 3.3 | Korjasin path name:eihin liittyvän ongelman ja tein retrospektiivin muistiinpanot retro.md tiedostoon. |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
 | Arttu | 6 | 6 |  |  |
-| Roberto  | 6 | 6,5 | 5 |  |
+| Roberto  | 6 | 6,5 | 6 |  |
 | Saija | 6 | 6,5 |  |  |
 | Sanni | 6 | 6 |  |  |
 | Santtu | 6 | 6,5 |  |  |
-| yht. | 30 | 31,5 |  |  |
+| yht. | 30 | 31,5 | 6 |  |
