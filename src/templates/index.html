@@ -7,9 +7,8 @@
     <form action="/view_sources" method="POST">
         <label for="view_format">Show references in format:</label>
         <br>
-        <input type="radio" name="view_format" value="text_view" checked> text
-        <input type="radio" name="view_format" value="bibtex_view"> BibTeX
-        <button type="submit" class="visible-button">Change</button>
+        <button type="submit" name="change_view_button" class="visible-button" value="text">Text</button>
+        <button type="submit" name="change_view_button" class="visible-button" value="BibTeX">BibTeX</button>
     </form>
 
     <h2>Articles</h2>

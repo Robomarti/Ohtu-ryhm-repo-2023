@@ -21,8 +21,9 @@ def index():
 def view_sources():
     if request.method == "POST":
         if session.get("user_id"):
-            view_format = request.form.get('view_format')
-            if view_format =='bibtex_view':
+            if request.form['change_view_button'] == 'text':
+                return redirect("/")
+            else:
                 bibtex_articles = bib.return_all_articles()
                 bibtex_books = bib.return_all_books()
                 bibtex_inproceedings = bib.return_all_inproceedings()
