@@ -57,7 +57,7 @@
 | Santtu | 2.12. | 1 | Korjasin ja refactoroin robot testejä |
 | Santtu | 3.12. | 2 | Robot testit lähteiden poistolle, epäonnistuville kirjautumisille ja rekisteröitymisille. Muutin tiedostorakennetta ja refaktoroin. |
 | Roberto | 4.12. | 3.3 | Korjasin path name:eihin liittyvän ongelman ja tein retrospektiivin muistiinpanot retro.md tiedostoon. |
-| Santtu | 2.12. | 2 | Robot testejä viitteiden näkymiseen oikein, selvitin voiko bib tiedoston tallennukseen tehdä testin.  |
+| Santtu | 4.12. | 2 | Robot testejä viitteiden näkymiseen oikein, selvitin voiko bib tiedoston tallennukseen tehdä testin.  |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
