@@ -52,7 +52,7 @@
 | Saija | 30.11. | 2 | Lomakkeiden ulkoasu, yksikkötestien korjaus hakemistorakenteen muutoksen jäljiltä, bibtex.html:n muokkaus uuteen layouttiin |
 | Roberto | 1.12. | 0.5 | Implementoin .bib tiedoston lataamisen. |
 | Arttu | 2.12. | 2 | Flask flashiin tutustuminen ja virheilmoitusten käsittely valmiiksi. |
-| Sanni | 2.12. | 1.5 | bib.py:lle yksikkötestit |
+| Sanni | 2.12. | 2 | bib.py:lle yksikkötestit |
 | Saija | 2.12. | 0,5 | Testitietokannan alustuksen siirtäminen erilliseen tiedostoon |
 | Santtu | 2.12. | 1 | Korjasin ja refactoroin robot testejä |
 | Santtu | 3.12. | 2 | Robot testit lähteiden poistolle, epäonnistuville kirjautumisille ja rekisteröitymisille. Muutin tiedostorakennetta ja refaktoroin. |
@@ -65,6 +65,6 @@
 | Arttu | 6 | 6 |  |  |
 | Roberto  | 6 | 6,5 | 6 |  |
 | Saija | 6 | 6,5 | 6,5 |  |
-| Sanni | 6 | 6 |  |  |
+| Sanni | 6 | 6 | 6 |  |
 | Santtu | 6 | 6,5 |  |  |
 | yht. | 30 | 31,5 | 12,5 |  |
