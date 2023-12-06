@@ -86,6 +86,16 @@ def user_id():
     """Returns the currently logged in user's id or 0 if no user is logged in"""
     return session.get("user_id", 0)
 
+def delete_user(users_id):
+    sql = text( """DELETE FROM users WHERE id=:user_id""")
+
+    try:
+        db.session.execute(sql, {"user_id": users_id})
+    except Exception: # pylint: disable=broad-except
+        print("users.py -> delete user: " , Exception)
+        return False
+    return True
+
 #testing
 def get_users():
     sql = text("SELECT * FROM users;")
