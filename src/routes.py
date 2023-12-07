@@ -36,16 +36,15 @@ def view_sources():
 
 @app.route("/choose_source_type", methods=["GET", "POST"])
 def choose_source():
-    if request.method == "GET":
-        if session.get("user_id"):
-            return render_template("choose_source_type.html")
+    if not session.get("user_id"):
         return redirect("/login")
-
-    if request.method == "POST":
+    elif request.method == "GET":
+        return render_template("choose_source_type.html")
+    elif request.method == "POST":
         source_type = request.form.get('source_type')
         if source_type =='article':
             return render_template("add_article.html")
-        if source_type =='book':
+        elif source_type =='book':
             return render_template("add_book.html")
         return render_template("add_inproceedings.html")
     return redirect("/")
@@ -120,42 +119,39 @@ def delete_inproceedings(ref_id):
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    if request.method == "GET":
-        if session.get("user_id"):
-            return redirect("/")
+    if session.get("user_id"):
+        return redirect("/")
+    elif request.method == "GET":
         return render_template("login.html")
-
-    if request.method == "POST":
+    elif request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if users.login(username, password):
             # users.py sets session["user_id"]
             return redirect("/")
-        flash("Invalid credentials.", "error")
-        return redirect("/login")
-    return redirect("/")
+        else:
+            flash("Invalid credentials.", "error")
+            return redirect("/login")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "GET":
-        # if user already logged in then redirectd
-        if session.get("user_id"):
-            return redirect("/")
+    if session.get("user_id"):
+        return redirect("/")
+    elif request.method == "GET":
         return render_template("sign_in.html")
-
-    if request.method == "POST":
+    elif request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if users.register(username, password):
             return redirect("/")
-        flash("""
-              Username taken or invalid password.<br><br> 
-              Ensure password is at least: <br>- 12 characters long 
-              <br>- includes at least 1 special character, 
-              uppercase letter, and a number.
-              """, "error")
-        return redirect("/register")
-    return redirect("/")
+        else:
+            flash("""
+                Username taken or invalid password.<br><br> 
+                Ensure password is at least: <br>- 12 characters long 
+                <br>- includes at least 1 special character, 
+                uppercase letter, and a number.
+                """, "error")
+            return redirect("/register")
 
 @app.route("/logout")
 def logout():
@@ -167,3 +163,14 @@ def download_references():
     bib.download_all()
     path = "references.bib"
     return send_file(path, as_attachment=True)
+
+@app.route("/delete_user", methods=["GET","POST"])
+def delete_user():
+    if not session.get("user_id"):
+        return redirect("/")
+    elif request.method == "GET":
+        pass
+        # return render_template("delete_user.html")
+    elif request.method == "POST":
+        users.delete_user(users.user_id)
+        return redirect("/login")

@@ -94,6 +94,7 @@ def delete_user(users_id):
     except Exception: # pylint: disable=broad-except
         print("users.py -> delete user: " , Exception)
         return False
+    session.clear()
     return True
 
 #testing
