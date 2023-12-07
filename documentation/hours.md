@@ -63,12 +63,14 @@
 | Kuka | päivä | aika | mitä tein  |
 | :-----| :----:|:-----| :-----|
 | Roberto | 5.12. | 1 | Suunnittelin sprinttiä. |
+| Arttu | 5.12. | 1 | Suunnittelin sprinttiä |
 | Roberto | 6.12. | 0.5 | Lisäsin käyttäjän poistamisen |
+| Arttu | 7.12. | 1.5 | Refaktorointia ja käyttäjän poistoa varten route |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
-| Arttu | 6 | 6 |  |  |
+| Arttu | 6 | 6 | 5 |  |
 | Roberto  | 6 | 6,5 | 6 | 1.5 |
 | Saija | 6 | 6,5 | 6,5 |  |
 | Sanni | 6 | 6 | 6 |  |
