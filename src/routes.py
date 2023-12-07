@@ -38,13 +38,13 @@ def view_sources():
 def choose_source():
     if not session.get("user_id"):
         return redirect("/login")
-    elif request.method == "GET":
+    if request.method == "GET":
         return render_template("choose_source_type.html")
-    elif request.method == "POST":
+    if request.method == "POST":
         source_type = request.form.get('source_type')
         if source_type =='article':
             return render_template("add_article.html")
-        elif source_type =='book':
+        if source_type =='book':
             return render_template("add_book.html")
         return render_template("add_inproceedings.html")
     return redirect("/")
@@ -121,37 +121,37 @@ def delete_inproceedings(ref_id):
 def login():
     if session.get("user_id"):
         return redirect("/")
-    elif request.method == "GET":
+    if request.method == "GET":
         return render_template("login.html")
-    elif request.method == "POST":
+    if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if users.login(username, password):
             # users.py sets session["user_id"]
             return redirect("/")
-        else:
-            flash("Invalid credentials.", "error")
-            return redirect("/login")
+        flash("Invalid credentials.", "error")
+        return redirect("/login")
+    return redirect("/")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if session.get("user_id"):
         return redirect("/")
-    elif request.method == "GET":
+    if request.method == "GET":
         return render_template("sign_in.html")
-    elif request.method == "POST":
+    if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if users.register(username, password):
             return redirect("/")
-        else:
-            flash("""
-                Username taken or invalid password.<br><br> 
-                Ensure password is at least: <br>- 12 characters long 
-                <br>- includes at least 1 special character, 
-                uppercase letter, and a number.
-                """, "error")
-            return redirect("/register")
+        flash("""
+            Username taken or invalid password.<br><br> 
+            Ensure password is at least: <br>- 12 characters long 
+            <br>- includes at least 1 special character, 
+            uppercase letter, and a number.
+            """, "error")
+        return redirect("/register")
+    return redirect("/")
 
 @app.route("/logout")
 def logout():
@@ -168,9 +168,10 @@ def download_references():
 def delete_user():
     if not session.get("user_id"):
         return redirect("/")
-    elif request.method == "GET":
+    if request.method == "GET":
         pass
         # return render_template("delete_user.html")
-    elif request.method == "POST":
+    if request.method == "POST":
         users.delete_user(users.user_id)
         return redirect("/login")
+    return redirect("/")
