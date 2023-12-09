@@ -39,10 +39,11 @@
         </div>
 
         <div class="buttons">
-            <form method="post" action="/delete_article/{{ article.id }}">
+            <form method="post" action="/delete_reference/{{ article.id }}">
                 <button type="submit" class="disappearing-button">
                     Delete
                 </button>
+                <input type="hidden" name="ref_type" value="articles" />
             </form>
         </div>
     </div>
@@ -75,10 +76,11 @@
         {{ book.book_year }}<br>
         </div>
         <div class="buttons">
-            <form method="post" action="/delete_book/{{ book.id }}">
+            <form method="post" action="/delete_reference/{{ book.id }}">
                 <button type="submit" class="disappearing-button">
                     Delete
                 </button>
+                <input type="hidden" name="ref_type" value="books" />
             </form>
             <!-- <form method="post" action=""> <!-- "/copy_book/{{ book.id }}"> 
                 <button type="submit" class="disappearing-button">
@@ -120,11 +122,12 @@
         {{ inproceeding.inproceedings_address }}<br>
         </div>
         <div class="buttons">
-        <form method="post" action="/delete_inproceeding/{{ inproceeding.id }}">
-            <button type="submit" class="disappearing-button">
-                Delete
-            </button>
-        </form>
+            <form method="post" action="/delete_reference/{{ inproceeding.id }}">
+                <button type="submit" class="disappearing-button">
+                    Delete
+                </button>
+                <input type="hidden" name="ref_type" value="inproceedings" />
+            </form>
         </div>
     </div>
     {% endfor %}
