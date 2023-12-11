@@ -4,6 +4,7 @@ from flask import session
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.sql import text
 from string import punctuation, ascii_uppercase
+import sys
 
 from src.db import db
 
@@ -51,7 +52,7 @@ def register(username, password):
     # exceptions we should expect:
     # pylint: disable=broad-except
     except Exception as exception:
-        print("users.py -> register: " , exception)
+        print("users.py -> register: " , exception, file=sys.stderr)
         return False
 
     return login(username, password)
@@ -94,8 +95,8 @@ def delete_user():
         db.session.execute(sql, {"user_id": user_id})
         db.session.commit()
 
-    except Exception: # pylint: disable=broad-except
-        print("users.py -> delete user: " , Exception)
+    except Exception as exception: # pylint: disable=broad-except
+        print("users.py -> delete user: " , exception, file=sys.stderr)
         return False
     session.clear()
     return True

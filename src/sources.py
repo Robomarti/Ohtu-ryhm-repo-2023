@@ -230,7 +230,6 @@ def get_all_inproceedings():
     inproceedings_by_user = result.fetchall()
     return inproceedings_by_user
 
-
 def delete_source(source_type, source_id):
     if session.get("user_id") is None:
         return False
