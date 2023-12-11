@@ -17,8 +17,12 @@ Link to the webpage https://ohtu-ryhmatyo.onrender.com/
 ## Retrospektive
 [Sprint 2 retrospectives](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/retro.md)
 
+[Sprint 3 retrospectives](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/retro2.md)
+
+
 ## Coverage report:
 ![Coverage-report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/coverage.png)
+
 
 ## Sprint 3 Burndown Graph:
 ![Coverage-report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/burndown_graph.png)

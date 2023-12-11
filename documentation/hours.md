@@ -66,6 +66,7 @@
 | Arttu | 5.12. | 1 | Suunnittelin sprinttiä |
 | Roberto | 6.12. | 0.5 | Lisäsin käyttäjän poistamisen |
 | Arttu | 7.12. | 1.5 | Refaktorointia ja käyttäjän poistoa varten route |
+| Roberto | 11.12. | 1 | Muutin testien nimiä ja ulkoasua, sekä lisäsin dokumentaatiota. |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
