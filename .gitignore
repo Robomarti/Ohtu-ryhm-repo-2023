@@ -6,3 +6,7 @@ selenium-screenshot*
 htmlcov
 .vscode
 references.bib
+.pytest_cache
+log.html
+output.xml
+report.html
