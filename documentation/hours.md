@@ -66,7 +66,9 @@
 | Arttu | 5.12. | 1 | Suunnittelin sprinttiä |
 | Roberto | 6.12. | 0.5 | Lisäsin käyttäjän poistamisen |
 | Arttu | 7.12. | 1.5 | Refaktorointia ja käyttäjän poistoa varten route |
+| Saija | 10.12. | 2 | Lisäsin sivun käyttäjätilin poistamisen varmistusta varten, sekä testasin ja korjasin poistamista |
 | Roberto | 11.12. | 2 | Muutin testien nimiä ja ulkoasua, sekä lisäsin dokumentaatiota. Paransin koodin johdonmukaisuutta. |
+| Saija | 11.12. | 2 | Tein käyttöliittymään pyydetyt muutokset, parantelin vähän ulkoasua ja siistin html- ja css- tiedostoja |
 | Santtu | 11.12. | 3 | Robot testit käyttäjän poistolle, robot testejen siivoamista. Lisäsin bib tiedoston lataukselle testin, mutta se toimii vain lokaalisti |
 
 ## Tunnit yhteensä
@@ -74,7 +76,7 @@
 | :-----| :----:|:----:|:----:|:----:|
 | Arttu | 6 | 6 | 5 |  |
 | Roberto  | 6 | 6,5 | 6 | 3.5 |
-| Saija | 6 | 6,5 | 6,5 |  |
+| Saija | 6 | 6,5 | 6,5 | 4 |
 | Sanni | 6 | 6 | 6 |  |
 | Santtu | 6 | 6,5 | 5 | 3 |
 | yht. | 30 | 31,5 | 28.5 |  |
