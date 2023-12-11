@@ -59,7 +59,7 @@
 | Roberto | 4.12. | 3.3 | Korjasin path name:eihin liittyvän ongelman ja tein retrospektiivin muistiinpanot retro.md tiedostoon. |
 | Santtu | 4.12. | 2 | Robot testejä viitteiden näkymiseen oikein, selvitin voiko bib tiedoston tallennukseen tehdä testin.  |
 
-## Sprint 3
+## Sprint 4
 | Kuka | päivä | aika | mitä tein  |
 | :-----| :----:|:-----| :-----|
 | Roberto | 5.12. | 1 | Suunnittelin sprinttiä. |
@@ -75,4 +75,4 @@
 | Saija | 6 | 6,5 | 6,5 |  |
 | Sanni | 6 | 6 | 6 |  |
 | Santtu | 6 | 6,5 |  |  |
-| yht. | 30 | 31,5 | 12,5 |  |
+| yht. | 30 | 31,5 | 30 |  |
