@@ -19,18 +19,20 @@ def index():
 
 @app.route("/view_sources", methods=["POST"])
 def view_sources():
-    if request.method == "POST":
-        if session.get("user_id"):
-            if request.form['change_view_button'] == 'Text':
-                return redirect("/")
-            if request.form['change_view_button'] == 'BibTeX':
-                bibtex_articles = bib.return_all_articles()
-                bibtex_books = bib.return_all_books()
-                bibtex_inproceedings = bib.return_all_inproceedings()
-                return render_template("bibtex.html",
-                                       bibtex_articles=bibtex_articles,
-                                        bibtex_books=bibtex_books,
-                                        bibtex_inproceedings=bibtex_inproceedings)
+    if not session.get("user_id"):
+        return redirect("/")
+
+    view_selection = request.form["change_view_button"]
+
+    if view_selection == "BibTeX":
+        bibtex_articles = bib.return_all_articles()
+        bibtex_books = bib.return_all_books()
+        bibtex_inproceedings = bib.return_all_inproceedings()
+        return render_template("bibtex.html",
+                               bibtex_articles=bibtex_articles,
+                               bibtex_books=bibtex_books,
+                               bibtex_inproceedings=bibtex_inproceedings)
+
     return redirect("/")
 
 
