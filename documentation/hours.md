@@ -67,7 +67,7 @@
 | Roberto | 6.12. | 0.5 | Lisäsin käyttäjän poistamisen |
 | Arttu | 7.12. | 1.5 | Refaktorointia ja käyttäjän poistoa varten route |
 | Roberto | 11.12. | 2 | Muutin testien nimiä ja ulkoasua, sekä lisäsin dokumentaatiota. Paransin koodin johdonmukaisuutta. |
-| Santtu | 11.12. | 2 | Robot testit käyttäjän poistolle, robot testejen siivoamista. |
+| Santtu | 11.12. | 3 | Robot testit käyttäjän poistolle, robot testejen siivoamista. Lisäsin bib tiedoston lataukselle testin, mutta se toimii vain lokaalisti |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
@@ -76,5 +76,5 @@
 | Roberto  | 6 | 6,5 | 6 | 3.5 |
 | Saija | 6 | 6,5 | 6,5 |  |
 | Sanni | 6 | 6 | 6 |  |
-| Santtu | 6 | 6,5 | 5 |  |
+| Santtu | 6 | 6,5 | 5 | 3 |
 | yht. | 30 | 31,5 | 28.5 |  |
