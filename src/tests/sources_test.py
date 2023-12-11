@@ -6,8 +6,8 @@
 import sys
 import os
 
-# If the following mess is not here, tests will not see app.py!!
-# This will probably break if project folder structure is changed.
+# The following paths atre needed for tests to see app.py.
+# This will need to be updated if project folder structure is changed.
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 

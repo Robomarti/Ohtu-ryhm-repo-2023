@@ -82,15 +82,18 @@ def logout():
     """Logs the user out"""
     session.clear()
 
-def user_id():
-    """Returns the currently logged in user's id or 0 if no user is logged in"""
-    return session.get("user_id", 0)
 
-def delete_user(users_id):
-    sql = text( """DELETE FROM users WHERE id=:user_id""")
+def delete_user():
+    if session.get("user_id") is None:
+        return False
+    user_id = session["user_id"]
+
+    sql = text("""DELETE FROM users WHERE id=:user_id""")
 
     try:
-        db.session.execute(sql, {"user_id": users_id})
+        db.session.execute(sql, {"user_id": user_id})
+        db.session.commit()
+
     except Exception: # pylint: disable=broad-except
         print("users.py -> delete user: " , Exception)
         return False

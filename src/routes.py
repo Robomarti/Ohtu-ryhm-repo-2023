@@ -169,9 +169,8 @@ def delete_user():
     if not session.get("user_id"):
         return redirect("/")
     if request.method == "GET":
-        pass
-        # return render_template("delete_user.html")
+        return render_template("delete_user.html")
     if request.method == "POST":
-        users.delete_user(users.user_id)
+        users.delete_user()
         return redirect("/login")
     return redirect("/")

@@ -1,7 +1,6 @@
 body {
     background-color: #1a1914;
-    font-family: 'Libre Caslon Text' serif; /*'Glass Antiqua' 'Zen Loop' 'Libre Caslon Display', 'Cinzel Decorative'*/
-    /*font-size: 1.2em;*/
+    font-family: 'Libre Caslon Text', serif;
     text-decoration: none;
     color: #dbdbdb;
     margin: 0;
@@ -45,6 +44,7 @@ body {
 .navbar-links {
     display: flex;
     gap: 18px;
+    justify-content: center;
 }
 
 
@@ -58,14 +58,6 @@ body {
     color: #e4ddba; 
 }
 
-.navbar-right {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-.navbar-right span {
-    margin-right: 5px;
-}
 .dropdown {
 
     position: relative;
@@ -90,7 +82,6 @@ body {
     margin-top: 100px;
     margin-bottom: 100px;
     display: block;
-    justify-content: space-between;
   }
 
 .content-container h1 {
@@ -117,9 +108,15 @@ body {
     width: 60%;
     margin: 0 auto;
     background-color: rgba(18, 18, 18, 0.9); 
-    padding: 5%
+    padding: 10px 5%;
 }
 
+#content-beginning {
+    padding-top: 50px;
+}
+#content-end {
+    padding-bottom: 80px;
+}
 
 .box {
     position: relative;
@@ -127,6 +124,8 @@ body {
     padding: 10px 30px 5px 30px;
     color: #dbdbdb;
     z-index: 80;
+    overflow: auto;
+    word-wrap: break-word;
 }
 
 .box:hover {
@@ -149,12 +148,13 @@ body {
 button {
     display: none;
     padding: 5px 10px 5px 10px ;
-    background-color: #c08e44; /*834c28*/
+    background-color: #c08e44; 
     color: #1b1a1a;
     border: none;
     cursor: pointer;
     margin: 10px 10px 0 10px;
-    font-family: 'Libre Caslon Display', serif; /* 'Glass Antiqua' 'Zen Loop'*/
+    font-family: 'Libre Caslon Display', serif;
+    font-size: 1em;
     font-weight: bold;
     text-decoration: none;
 }
@@ -171,6 +171,9 @@ button:hover {
     cursor: pointer;
 }
 
+.button-link {
+    text-decoration: none;
+}
 
   
 .textfield-form label {

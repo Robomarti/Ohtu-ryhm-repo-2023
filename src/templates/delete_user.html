@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="content">
+
+<form action="/delete_user" method="POST">
+    <h2> Remove Account</h2>
+    {% with message = get_flashed_messages() %}
+        {% if message %}
+            {{ message[0]|safe }}
+        {% endif %}
+    {% endwith %}
+    <p>Caution! By proceeding, you are requesting the permanent deletion of your user account and all saved data. </p>
+    <p>Please make sure that you have backed up any important data before confirming deletion.</p>
+
+    <button type="submit" class="visible-button">Permanently Delete Account</button>
+    </form>
+
+    <a href="/" class="button-link"><button class="visible-button">Changed my mind, return to main page</button></a>
+    <div class="content" id="content-end">
+    </div>
+    {% endblock %}

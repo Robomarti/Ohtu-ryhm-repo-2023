@@ -1,16 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<div class="content" id="articles">
+<div class="content" id="content-beginning">
     <h1>References</h1>
 
-    <form action="/view_sources" method="POST">
-        <label for="view_format">Show references in format:</label>
-        <br>
-        <button type="submit" name="change_view_button" class="visible-button" value="Text">Text</button>
-        <button type="submit" name="change_view_button" class="visible-button" value="BibTeX">BibTeX</button>
-    </form>
+    <p>Below is a list of the references you have saved.</p>
 
+    <p>You can change the view format to BibTeX, or download your reference list as a .bib file.
+    </p>
+
+    <form action="/view_sources" method="POST">
+        <button type="submit" name="change_view_button" class="visible-button" value="BibTeX">View as BibTeX</button>
+    </form>
+    <a href="/download_references" class="button-link"><button class="visible-button">Download File</button></a>
+    
+</div>
+
+<div class="content" id="articles">
     <h2>Articles</h2>
     {% if articles is none %}
     <p>Error retrieving data from the database.</p>
@@ -80,11 +86,6 @@
                     Delete
                 </button>
             </form>
-            <!-- <form method="post" action=""> <!-- "/copy_book/{{ book.id }}"> 
-                <button type="submit" class="disappearing-button">
-                    Copy text
-                </button>
-            </form>-->
         </div>
     </div>
     {% endfor %}
@@ -129,5 +130,8 @@
     </div>
     {% endfor %}
     {% endif %}
+</div>
+
+<div class="content" id="content-end">
 </div>
 {% endblock %}
