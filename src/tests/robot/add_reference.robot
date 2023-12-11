@@ -6,7 +6,6 @@ Suite Setup  Open And Configure Browser Initialize Database And Signin
 Suite Teardown  Close Browser
 
 *** Test Cases ***
-
 Add Valid Article
     Open Choose Source Type Page And Input Type  article
     Set Article  Arno  Testi  Testimesta  2023  1  2  100

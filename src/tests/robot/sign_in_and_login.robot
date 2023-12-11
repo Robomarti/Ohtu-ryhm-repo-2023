@@ -5,39 +5,39 @@ Suite Setup  Open And Configure Browser And Initialize Database
 Suite Teardown  Close Browser
 
 *** Test Cases ***
-Register User Succesfully And Logout
+Registering User And Logging Out Succeeds
     Register As  testi  Testaaja1lmar!
     Should Be Logged In
     Logout
     Login Page Should Be Open
 
-Loign Succesfully And Logout
+Login And Logout Succeeds
     Login As  testi  Testaaja1lmar!
     Should Be Logged In
     Logout
     Login Page Should Be Open
 
-Login Unsuccesfully With Correct Username And Incorrect Password
+Login Does Not Succeed With Correct Username And Incorrect Password
     Login As  testi  !Testaaja1lmar
     Wont Allow Logging In And Login Page Contains Error Message
 
-Login Unsuccesfully With Incorrect Username And Correct Password
+Login Does Not Succeed With Incorrect Username And Correct Password
     Login As  MasterTester  Testaaja1lmar!
     Wont Allow Logging In And Login Page Contains Error Message
 
-Register Unsuccesfully With Too Short Password
+Register Does Not Succeed With Too Short Password
     Register As  TesterMaster  T3st!
     Wont Allow Registering And Register Page Contains Error Message
 
-Register Unsuccesfully With Password That Has No Capital Letters
+Register Does Not Succeed With Password That Has No Capital Letters
     Register As  TesterMaster  testaaja1lmar!
     Wont Allow Registering And Register Page Contains Error Message
 
-Register Unsuccesfully With Password That Has No Numbers
+Register Does Not Succeed With Password That Has No Numbers
     Register As  TesterMaster  Testaajailmar!
     Wont Allow Registering And Register Page Contains Error Message
 
-Register Unsuccesfully With Password That Has No Special Characters
+Register Does Not Succeed With Password That Has No Special Characters
     Register As  TesterMaster  Testaaja1lmari
     Wont Allow Registering And Register Page Contains Error Message
 
