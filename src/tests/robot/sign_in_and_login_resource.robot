@@ -17,9 +17,18 @@ Logout
     Go To Home Page
     Click Link  Logout
 
-Signin As User
+Register As
     [Arguments]  ${username}  ${password}
     Go To Signin Page
     Set User Credentials  ${username}  ${password}
     Submit Signin Credentials
-    Should Be Logged In
+
+Login As
+    [Arguments]  ${username}  ${password}
+    Go To Login Page
+    Set User Credentials  ${username}  ${password}
+    Submit Login Credentials
+
+Wont Allow Logging In And Login Page Contains Error Message
+    Login Page Should Be Open
+    Page Should Contain  Invalid credentials.

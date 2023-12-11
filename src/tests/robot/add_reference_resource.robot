@@ -38,3 +38,35 @@ Choose Source Type
     [Arguments]  ${type}
     Select From List By Value  name:source_type  ${type}
     Click Button  Select type
+
+Article Should Be On Home Page
+    [Arguments]  ${author}  ${title}  ${journal}  ${year}  ${volume}  ${number}  ${pages}
+    Go To Home Page
+    Page Should Contain  ${author}
+    Page Should Contain  ${title}
+    Page Should Contain  ${journal}
+    Page Should Contain  ${year}
+    Page Should Contain  ${volume}
+    Page Should Contain  ${number}
+    Page Should Contain  ${pages}
+
+Book Should Be On Home Page
+    [Arguments]  ${author}  ${title}  ${publisher}  ${address}  ${year}
+    Go To Home Page
+    Page Should Contain  ${author}
+    Page Should Contain  ${title}
+    Page Should Contain  ${publisher}
+    Page Should Contain  ${address}
+    Page Should Contain  ${year}
+
+Inproceedings Should Be On Home Page
+    [Arguments]  ${author}  ${title}  ${booktitle}  ${series}  ${year}  ${pages}  ${publisher}  ${address}
+    Go To Home Page
+    Page Should Contain  ${author}
+    Page Should Contain  ${title}
+    Page Should Contain  ${booktitle}
+    Page Should Contain  ${series}
+    Page Should Contain  ${year}
+    Page Should Contain  ${pages}
+    Page Should Contain  ${publisher}
+    Page Should Contain  ${address}

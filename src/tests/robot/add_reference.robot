@@ -36,10 +36,3 @@ Open Choose Source Type Page And Input Type
 Open And Configure Browser Initialize Database And Signin
     Open And Configure Browser And Initialize Database
     Create Test Account And Login
-
-Delete Reference And Check If Its Deleted
-    [Arguments]  ${locator}
-    Page Should Contain  ${locator}
-    Mouse Over  class:source
-    Click Button  Delete
-    Page Should Not Contain  ${locator}

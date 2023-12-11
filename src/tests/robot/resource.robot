@@ -26,12 +26,6 @@ Create Test Account And Login
     Input Text  password  Testaaja1lmar!
     Click Button  Login
 
-Add Article Page Should Be Open
-    Title Should Be  Add article
-
-Choose Source Type Page Should Be Open
-    Title Should Be  Choose source type
-
 Login Page Should Be Open
     Page Should Contain  Login...
 
@@ -53,36 +47,3 @@ Go To Signin Page
 Should Be Logged In
     Go To Home Page
     Page Should Contain  References
-
-Article Should Be On Home Page
-    [Arguments]  ${author}  ${title}  ${journal}  ${year}  ${volume}  ${number}  ${pages}
-    Go To Home Page
-    Page Should Contain  ${author}
-    Page Should Contain  ${title}
-    Page Should Contain  ${journal}
-    Page Should Contain  ${year}
-    Page Should Contain  ${volume}
-    Page Should Contain  ${number}
-    Page Should Contain  ${pages}
-
-Book Should Be On Home Page
-    [Arguments]  ${author}  ${title}  ${publisher}  ${address}  ${year}
-    Go To Home Page
-    Page Should Contain  ${author}
-    Page Should Contain  ${title}
-    Page Should Contain  ${publisher}
-    Page Should Contain  ${address}
-    Page Should Contain  ${year}
-
-Inproceedings Should Be On Home Page
-    [Arguments]  ${author}  ${title}  ${booktitle}  ${series}  ${year}  ${pages}  ${publisher}  ${address}
-    Go To Home Page
-    Page Should Contain  ${author}
-    Page Should Contain  ${title}
-    Page Should Contain  ${booktitle}
-    Page Should Contain  ${series}
-    Page Should Contain  ${year}
-    Page Should Contain  ${pages}
-    Page Should Contain  ${publisher}
-    Page Should Contain  ${address}
-    

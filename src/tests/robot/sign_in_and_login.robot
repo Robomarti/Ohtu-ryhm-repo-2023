@@ -42,22 +42,6 @@ Register Does Not Succeed With Password That Has No Special Characters
     Wont Allow Registering And Register Page Contains Error Message
 
 *** Keywords ***
-Register As
-    [Arguments]  ${username}  ${password}
-    Go To Signin Page
-    Set User Credentials  ${username}  ${password}
-    Submit Signin Credentials
-
-Login As
-    [Arguments]  ${username}  ${password}
-    Go To Login Page
-    Set User Credentials  ${username}  ${password}
-    Submit Login Credentials
-
 Wont Allow Registering And Register Page Contains Error Message
     Register Page Should Be Open
     Page Should Contain  Username taken or invalid password
-
-Wont Allow Logging In And Login Page Contains Error Message
-    Login Page Should Be Open
-    Page Should Contain  Invalid credentials.
