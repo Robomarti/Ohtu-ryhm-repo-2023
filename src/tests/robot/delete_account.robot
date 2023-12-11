@@ -5,7 +5,7 @@ Suite Setup  Open And Configure Browser And Initialize Database
 Suite Teardown  Close Browser
 
 *** Test Cases ***
-Canceling User Account deletion Does Not Delete Account
+Canceling User Account Deletion Does Not Delete Account
     Create Test Account And Login
     Should Be Logged In
     Go To Account Removal Page
@@ -15,7 +15,7 @@ Canceling User Account deletion Does Not Delete Account
     Login As  Testihyyppä  Testaaja1lmar!
     Should Be Logged In
 
-Deleting User Account Logsout User And Redirects To Login Page
+Deleting User Account Logs The User Out And Redirects To Login Page
     Go To Account Removal Page
     Click Button  Permanently Delete Account
     Login Page Should Be Open

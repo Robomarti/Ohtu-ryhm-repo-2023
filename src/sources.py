@@ -1,9 +1,12 @@
-from src.db import db
 from sqlalchemy.sql import text
 from flask import session
+import sys
+
+from src.db import db
 
 # we need all of the arguments
-def add_article(article_author, # pylint: disable=too-many-arguments
+# pylint: disable=too-many-arguments
+def add_article(article_author,
                 article_title,
                 article_journal,
                 article_year,
@@ -53,9 +56,8 @@ def add_article(article_author, # pylint: disable=too-many-arguments
     # exceptions we should expect:
     # pylint: disable=broad-except
     except Exception as exception:
-        print("sources.py -> add_article: " , exception)
+        print("sources.py -> add_article: " , exception, file=sys.stderr)
         return False
-
     return True
 
 def add_book(book_author,
@@ -66,9 +68,8 @@ def add_book(book_author,
 
     if session.get("user_id") is None:
         return False
-    user_id = session["user_id"]
 
-    # print("sources.py / add_book! author = ", book_author)
+    user_id = session["user_id"]
     sql = text("""INSERT INTO books (
                     user_id,
                     book_author,
@@ -99,9 +100,8 @@ def add_book(book_author,
         db.session.commit()
     # pylint: disable=broad-except
     except Exception as exception:
-        print("sources.py -> add_book: Exception: ",  exception)
+        print("sources.py -> add_book: Exception: ",  exception, file=sys.stderr)
         return False
-
     return True
 
 # pylint: disable=too-many-arguments
@@ -113,11 +113,11 @@ def add_inproceedings(inproceedings_author,
                       inproceedings_pages,
                       inproceedings_publisher,
                       inproceedings_address):
+
     if session.get("user_id") is None:
         return False
-    user_id = session["user_id"]
 
-    print("sources.py / add inproceedings! author = ", inproceedings_author)
+    user_id = session["user_id"]
     sql = text("""INSERT INTO inproceedings (
                     user_id,
                     inproceedings_author,
@@ -157,17 +157,16 @@ def add_inproceedings(inproceedings_author,
         db.session.commit()
     # pylint: disable=broad-except
     except Exception as exception:
-        print("sources.py -> add_article:", exception)
+        print("sources.py -> add_article:", exception, file=sys.stderr)
         return False
-
     return True
 
 def get_all_articles():
     user_id = session.get("user_id")
     if not user_id:
         return False
-    user_id = session["user_id"]
 
+    user_id = session["user_id"]
     sql = text("""SELECT
                     id,
                     user_id,
@@ -184,15 +183,13 @@ def get_all_articles():
 
     result = db.session.execute(sql, {"user_id": user_id})
     articles_by_user = result.fetchall()
-    # print("sources.py / get_all_articles: articles_by_user = ", articles_by_user)
-
     return articles_by_user
 
 def get_all_books():
     if session.get("user_id") is None:
         return False
-    user_id = session["user_id"]
 
+    user_id = session["user_id"]
     sql = text("""SELECT
                     id,
                     user_id,
@@ -206,10 +203,7 @@ def get_all_books():
                """)
 
     result = db.session.execute(sql, {"user_id": user_id})
-    # print("sources.py / get_all_books: result = ", result)
-
     books_by_user = result.fetchall()
-    # print("sources.py / get_all_books: books_by_user = ", books_by_user)
     return books_by_user
 
 def get_all_inproceedings():
@@ -234,30 +228,24 @@ def get_all_inproceedings():
 
     result = db.session.execute(sql, {"user_id": user_id})
     inproceedings_by_user = result.fetchall()
-    # print("sources.py / get_all_inproceedings: inproceedings_by_user = ", inproceedings_by_user)
-
     return inproceedings_by_user
 
 
 def delete_source(source_type, source_id):
-
     if session.get("user_id") is None:
         return False
+
     user_id = session["user_id"]
-
-
     allowed_source_types = ['books', 'articles', 'inproceedings']
     if source_type not in allowed_source_types:
         return False
 
     sql = text(f"DELETE FROM {source_type} WHERE (id = :id AND user_id=:user_id);")
-    print("sources.py/delete_source: sql = ", sql, {"id": str(source_id), "user_id": str(user_id)})
     try:
         db.session.execute(sql, {"id": str(source_id), "user_id": str(user_id)})
         db.session.commit()
-
     # pylint: disable=broad-except
     except Exception as exception:
-        print("sources.py -> delete_source:", exception)
+        print("sources.py -> delete_source:", exception, file=sys.stderr)
         return False
     return True

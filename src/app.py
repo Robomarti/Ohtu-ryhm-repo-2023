@@ -10,6 +10,7 @@ if not getenv("SECRET_KEY"):
     print('NO SECRET KEY SET :<<', file=sys.stderr)
 else:
     print('All is working :>', file=sys.stderr)
+
 if environ.get("FLASK_ENV") == "test":
     print("Running in testing environment")
     import src.tests.robot.testing_routes
