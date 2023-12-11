@@ -26,3 +26,7 @@ Link to the webpage https://ohtu-ryhmatyo.onrender.com/
 
 ## Sprint 3 Burndown Graph:
 ![Coverage-report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/burndown_graph.png)
+
+## Sprint 4 Burndown Graph:
+![Coverage-report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/burndown_graph2.png)
+
