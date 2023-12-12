@@ -77,7 +77,7 @@
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
-| Arttu | 6 | 6 | 5 |  |
+| Arttu | 6 | 6 | 5 | 2,5 |
 | Roberto  | 6 | 6,5 | 6 | 3.5 |
 | Saija | 6 | 6,5 | 6,5 | 5 |
 | Sanni | 6 | 6 | 6 | 2.5 |
