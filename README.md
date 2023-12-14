@@ -14,6 +14,8 @@ Definition of done: https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/d
 
 Link to the webpage https://ohtu-ryhmatyo.onrender.com/
 
+[Ending report](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/loppuraportti.md)
+
 ## Retrospektive
 [Sprint 2 retrospectives](https://github.com/Robomarti/Ohtu-ryhm-repo-2023/blob/main/documentation/retro.md)
 

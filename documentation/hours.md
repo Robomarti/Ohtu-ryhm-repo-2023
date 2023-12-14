@@ -73,13 +73,14 @@
 | Santtu | 11.12. | 3 | Robot testit käyttäjän poistolle, robot testejen siivoamista. Lisäsin bib tiedoston lataukselle testin, mutta se toimii vain lokaalisti |
 | Sanni | 11.12 | 1.5 | yksikkötestejä users.py:lle |
 | Saija | 12.12. | 1 | Paransin sourcesin yksikkötestikattavuutta ja päivitin coveragen |
+| Roberto | 12.12. | 0.5 | Oikoluin loppuraportin ja korjasin kirjoitusvirheitä. |
 
 ## Tunnit yhteensä
 |  | Sprint 1   | Sprint 2 | Sprint 3 | Sprint 4 |
 | :-----| :----:|:----:|:----:|:----:|
 | Arttu | 6 | 6 | 5 | 2,5 |
-| Roberto  | 6 | 6,5 | 6 | 3.5 |
+| Roberto  | 6 | 6,5 | 6 | 4 |
 | Saija | 6 | 6,5 | 6,5 | 5 |
 | Sanni | 6 | 6 | 6 | 2.5 |
 | Santtu | 6 | 6,5 | 5 | 3 |
-| yht. | 30 | 31,5 | 28.5 |  |
+| yht. | 30 | 31,5 | 28.5 | 17 |
