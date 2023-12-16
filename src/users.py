@@ -100,9 +100,3 @@ def delete_user():
         return False
     session.clear()
     return True
-
-#testing
-def get_users():
-    sql = text("SELECT * FROM users;")
-    result = db.session.execute(sql)
-    return result.fetchall()
