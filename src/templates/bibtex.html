@@ -35,10 +35,11 @@
         </div>
 
         <div class="buttons">
-            <form method="post" action="/delete_article/{{ bibtex_article[1] }}">
+            <form method="post" action="/delete_reference/{{ bibtex_article[1] }}">
                 <button type="submit" class="disappearing-button">
                     Delete
                 </button>
+                <input type="hidden" name="ref_type" value="articles" />
             </form>
         </div>
     </div>
@@ -62,10 +63,11 @@
         </div>
 
         <div class="buttons">
-            <form method="post" action="/delete_book/{{ bibtex_book[1] }}">
+            <form method="post" action="/delete_reference/{{ bibtex_book[1] }}">
                 <button type="submit" class="disappearing-button">
                     Delete
                 </button>
+                <input type="hidden" name="ref_type" value="books" />
             </form>
         </div>
     </div>
@@ -87,10 +89,11 @@
         <pre>{{ bibtex_inproceeding[0] }}</pre><br>
         </div>
         <div class="buttons">
-        <form method="post" action="/delete_inproceeding/{{ bibtex_inproceeding[1]}}">
+        <form method="post" action="/delete_reference/{{ bibtex_inproceeding[1] }}">
             <button type="submit" class="disappearing-button">
                 Delete
             </button>
+            <input type="hidden" name="ref_type" value="inproceedings" />
         </form>
         </div>
     </div>
